@@ -3,7 +3,7 @@ class CreatePlaces < ActiveRecord::Migration[5.2]
     create_table :places do |t|
       t.string :name
       t.string :image_url
-      t.vote :boolean
+      t.boolean :status, default: false
 
       t.timestamps
     end
