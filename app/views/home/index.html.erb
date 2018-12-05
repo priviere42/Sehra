@@ -19,11 +19,12 @@
 <%= link_to "Events", events_index_path %>
 <br><br>
 
+<% @cities.each do |city| %>
+
     <%= link_to cities_show_path(id: city) do %>
         <%= city.name %>
         <br>
     <% end %>
-
             Events: 
             <% city.place.events.each do |event| %>
             <br>
