@@ -1,11 +1,27 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 
+<%= link_to "Cities", cities_index_path %>
+<br><br>
+<%= link_to "Events", events_index_path %>
+<br><br>
+
 <% @cities.each do |city| %>
-    <%= city.name %>
-    <br>
-    <%= city.description %>
-    <br>
-    <%= image_tag(city.image_url, size: "300") %>
-    <br>
+
+    <%= link_to cities_show_path(id: city) do %>
+        <%= city.name %>
+        <br>
+    <% end %>
+
+            Events: 
+            <% city.place.events.each do |event| %>
+            <br>
+                <%= link_to events_show_path(id: event) do %>
+                    <%= image_tag(event.image1, size: "50") %>
+                    <br>
+                <% end %>
+            <% end %>
+
+        <br><br><br>
+
 <% end %>
