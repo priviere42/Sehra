@@ -1,0 +1,15 @@
+<h1>Events#show</h1>
+<p>Find me in app/views/events/show.html.erb</p>
+
+<%= @event.name %>
+<br>
+<%= @event.description %>
+<br>
+<%= image_tag(@event.image1, size: "300") %>
+<br>
+<%= @city_of_event.name %>
+<br>
+<%= @place_of_event.name %>
+<br>
+<%= image_tag(@place_of_event.image_url, size: "100") %>
+
