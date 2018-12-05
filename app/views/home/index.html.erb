@@ -10,3 +10,15 @@
 
 <% end %> 
 </ul>
+
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<% @cities.each do |city| %>
+    <%= city.name %>
+    <br>
+    <%= city.description %>
+    <br>
+    <%= image_tag(city.image_url, size: "300") %>
+    <br>
+<% end %>
