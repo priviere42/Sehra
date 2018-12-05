@@ -12,3 +12,4 @@ City.create!(name: "Marseille" , description: "La Cité Phocéenne" ,image_url: 
 City.create!(name: "Nice" , description: "Nissa la Bella" ,image_url: "/assets/city/nice.jpg")
 City.create!(name: "Paris" , description: "Paname, la Capitale" ,image_url: "/assets/city/paris.jpg")
 City.create!(name: "Toulouse" , description: "La Ville Rose" ,image_url: "/assets/city/toulouse.jpg")
+
