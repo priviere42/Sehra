@@ -61,9 +61,12 @@ ActiveRecord::Schema.define(version: 2018_12_05_113623) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.boolean "value", default: false
+    t.bigint "event_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_votes_on_event_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
   add_foreign_key "events", "places"
