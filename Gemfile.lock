@@ -94,6 +94,7 @@ GEM
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    libv8 (6.7.288.46.1-x86_64-darwin-17)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -109,6 +110,8 @@ GEM
     mimemagic (0.3.2)
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
+    mini_racer (0.2.4)
+      libv8 (>= 6.3)
     minitest (5.11.3)
     msgpack (1.2.4)
     multi_json (1.13.1)
@@ -150,6 +153,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    record_tag_helper (1.0.0)
+      actionview (~> 5.x)
     regexp_parser (1.3.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
@@ -218,9 +223,11 @@ DEPENDENCIES
   faker
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  mini_racer
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.1, >= 5.2.1.1)
+  record_tag_helper
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
@@ -234,4 +241,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.6
+   1.17.1

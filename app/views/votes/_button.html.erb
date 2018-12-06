@@ -1,0 +1,8 @@
+<% if current_user.vote?(@event) %>
+  <%= button_to "Unvote", unvote_path(event_id: @event.id), remote: true, method: :delete  %>
+<% else %>
+  <%= button_to "Vote", vote_path(event_id: @event.id), remote: true  %>
+<% end %>
+
+Number of votes: 
+<%= @event.votes.count %>
