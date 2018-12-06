@@ -24,3 +24,32 @@
                 <% end %>
             <% end %>
 
+<p>Test de l'API Google Map</p>
+<head>
+    <style> 
+      #map {
+        height: 400px; 
+        width: 100%; 
+       }
+    </style>
+  </head>
+
+<body>
+    <div id="map"></div>
+    <script>
+
+function initMap() {
+  // Localisation test pour toulouse
+  var toulouse = {lat: 43.600000, lng: 1.433333};
+  // la map est centrée sur toulouse
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 15, center: toulouse});
+  // le marker est positionné sur toulouse
+  var marker = new google.maps.Marker({position: toulouse, map: map});
+}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-_nDQXE5tAvYxs8DbGT28RjdF2DMb67I&callback=initMap">
+    </script>
+</div>
+</body>
