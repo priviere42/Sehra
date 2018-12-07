@@ -39,17 +39,17 @@
     <script>
 
 function initMap() {
-  // Localisation test pour toulouse
-  var toulouse = {lat: 43.6113042, lng: 1.433333};
-  // la map est centrée sur toulouse
+  // Localisation test pour paris
+  var paris = {lat: 48.8763009, lng: 2.325402};
+  // la map est centrée sur paris
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 15, center: toulouse});
-  // le marker est positionné sur toulouse
-  var marker = new google.maps.Marker({position: toulouse, map: map});
+      document.getElementById('map'), {zoom: 15, center: paris});
+  // le marker est positionné sur paris
+  var marker = new google.maps.Marker({position: paris, map: map});
 }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=KEY
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-_nDQXE5tAvYxs8DbGT28RjdF2DMb67I
 &callback=initMap">
     </script>
 </div>
