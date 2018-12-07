@@ -25,7 +25,7 @@
     <% end %>
             Events: 
             <br>
-            <% city.place.events.each do |event| %>
+            <% city.place.Events.each do |event| %>
                 <%= link_to events_show_path(id: event) do %>
                     <%= image_tag(event.image1, size: "50") %>
                 <% end %>
