@@ -8,12 +8,12 @@
 
 require "faker"
 
-City.create!(name: "Bordeaux" , description: "La Belle Endormie" ,image_url: "city/bordeaux.jpg")
-City.create!(name: "Lyon" , description: "La Capitale des Gaules" ,image_url: "city/lyon.jpg")
-City.create!(name: "Marseille" , description: "La Cité Phocéenne" ,image_url: "city/marseille.jpg")
-City.create!(name: "Nice" , description: "Nissa la Bella" ,image_url: "city/nice.jpg")
-City.create!(name: "Paris" , description: "Paname, la Capitale" ,image_url: "city/paris.jpg")
-City.create!(name: "Toulouse" , description: "La Ville Rose" ,image_url: "city/toulouse.jpg")
+City.create!(name: "Bordeaux" , description: "La Belle Endormie" ,image_url: "city/bordeaux.jpg", latitude: 44.837789, longitude: -0.57918)
+City.create!(name: "Lyon" , description: "La Capitale des Gaules" ,image_url: "city/lyon.jpg", latitude: 45.764043, longitude: 4.835659)
+City.create!(name: "Marseille" , description: "La Cité Phocéenne" ,image_url: "city/marseille.jpg", latitude: 43.300000, longitude: 5.400000)
+City.create!(name: "Nice" , description: "Nissa la Bella" ,image_url: "city/nice.jpg", latitude: 43.700000, longitude: 7.250000)
+City.create!(name: "Paris" , description: "Paname, la Capitale" ,image_url: "city/paris.jpg", latitude: 48.866667, longitude: 2.333333)
+City.create!(name: "Toulouse" , description: "La Ville Rose" ,image_url: "city/toulouse.jpg", latitude: 43.600000, longitude: 1.433333)
 
 
 Place.create!(name: "Old Library", address: "1 Main Street", image_url: "place/1.jpg", city_id: 1)
