@@ -2,6 +2,7 @@
 <ul>
 <% if user_signed_in? %>
 <li> <%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li>
+<li> <%= link_to "Edit Account", edit_user_registration_path %>
 <li> Vous êtes bien connecté sous le nom de : <%= current_user.first_name %>. </li>
 
 <% else %>
@@ -23,11 +24,10 @@
         <br>
     <% end %>
             Events: 
-            <% city.place.events.each do |event| %>
             <br>
+            <% city.place.events.each do |event| %>
                 <%= link_to events_show_path(id: event) do %>
                     <%= image_tag(event.image1, size: "50") %>
-                    <br>
                 <% end %>
             <% end %>
 

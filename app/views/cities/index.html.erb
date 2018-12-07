@@ -2,9 +2,7 @@
 
     <%= link_to cities_show_path(id: city) do %>
         <%= city.name %>
-        <br>
         <%= image_tag(city.image_url, size: "300") %>
-        <br>
     <% end %>
 
 <% end %>

@@ -3,21 +3,35 @@
     <%= @city.description %>
     <br>
     <%= image_tag(@city.image_url, size: "300") %>
-    <br>
+
 
         Place:
-        <br>
-        <%= @city.place.name %>
-        <br>
-        <%= image_tag(@city.place.image_url, size: "200") %>
-        <br>
 
+        <%= @city.place.name %>
+        <%= image_tag(@city.place.image_url, size: "200") %>
             Events: 
             <% @city.place.events.each do |event| %>
                 <%= link_to events_show_path(id: event) do %>
-                    <br>
+
                     <%= image_tag(event.image1, size: "50") %>
-                    <br>
+
                 <% end %>
             <% end %>
 
+<p>Test de l'API Google Map</p>
+
+    <div id="map"></div>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.googlejs_api %>&callback=initMap"></script>
+
+    <script>
+function initMap() {
+  // Localisation test pour paris
+  var paris = {lat: <%= @city.latitude %> , lng: <%= @city.longitude %> };
+  // la map est centrée sur paris
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 15, center: paris});
+  // le marker est positionné sur paris
+  var marker = new google.maps.Marker({position: paris, map: map});
+}
+    </script>

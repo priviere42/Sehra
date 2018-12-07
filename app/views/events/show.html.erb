@@ -3,6 +3,12 @@
 <%= @event.description %>
 <br>
 <%= image_tag(@event.image1, size: "300") %>
+<% if @event.image2? %>
+<%= image_tag(@event.image2, size: "300") %>
+<% end %>
+<% if @event.image3? %>
+<%= image_tag(@event.image3, size: "300") %>
+<% end %>
 <br>
 <%= @city_of_event.name %>
 <br>
@@ -14,5 +20,8 @@
     <%= div_for @event do %>
         <%= render partial: "votes/button", locals: { event: @event } %>
     <% end %>
+    <% else %>
+        Number of votes:
+        <%= render partial: "votes/count" %>
 <% end %>
 
