@@ -1,3 +1,4 @@
+
 <%= link_to "Cities", cities_index_path %>
 <br><br>
 <%= link_to "Events", events_index_path %>
@@ -10,11 +11,10 @@
         <br>
     <% end %>
             Events: 
-            <% city.place.events.each do |event| %>
             <br>
+            <% city.place.events.each do |event| %>
                 <%= link_to events_show_path(id: event) do %>
                     <%= image_tag(event.image1, size: "50") %>
-                    <br>
                 <% end %>
             <% end %>
 
