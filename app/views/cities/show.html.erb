@@ -18,7 +18,7 @@
                 <% end %>
             <% end %>
 
-<p>Test de l'API Google Map</p>
+<p>Localisation de la friche "<%= @city.place.name %>" situé à <%= @city.name %>: </p>
 
     <div id="map"></div>
 
@@ -27,7 +27,7 @@
     <script>
 function initMap() {
   // Localisation test pour paris
-  var paris = {lat: <%= @city.latitude %> , lng: <%= @city.longitude %> };
+  var paris = {lat: <%= @city.place.latitude %> , lng: <%= @city.place.longitude %> };
   // la map est centrée sur paris
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 15, center: paris});

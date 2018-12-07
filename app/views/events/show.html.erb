@@ -10,8 +10,6 @@
 <%= image_tag(@event.image3, size: "300") %>
 <% end %>
 <br>
-<%= @city_of_event.name %>
-<br>
 <%= @place_of_event.name %>
 <br>
 <%= image_tag(@place_of_event.image_url, size: "100") %>
@@ -25,3 +23,20 @@
         <%= render partial: "votes/count" %>
 <% end %>
 
+<p>Localisation de la friche ou l'evenement se déroulera: </p>
+
+    <div id="map"></div>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.googlejs_api %>&callback=initMap"></script>
+
+    <script>
+function initMap() {
+  // Localisation test pour paris
+  var paris = {lat: <%= Place.find(@event.place_id).latitude %> , lng: <%= Place.find(@event.place_id).longitude %> };
+  // la map est centrée sur paris
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 15, center: paris});
+  // le marker est positionné sur paris
+  var marker = new google.maps.Marker({position: paris, map: map});
+}
+    </script>
