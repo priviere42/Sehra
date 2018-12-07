@@ -25,19 +25,10 @@
             <% end %>
 
 <p>Test de l'API Google Map</p>
-<head>
-    <style> 
-      #map {
-        height: 400px; 
-        width: 100%; 
-       }
-    </style>
-  </head>
 
-<body>
     <div id="map"></div>
+    
     <script>
-
 function initMap() {
   // Localisation test pour paris
   var paris = {lat: 48.8763009, lng: 2.325402};
@@ -48,9 +39,3 @@ function initMap() {
   var marker = new google.maps.Marker({position: paris, map: map});
 }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=KEY
-&callback=initMap">
-    </script>
-</div>
-</body>
