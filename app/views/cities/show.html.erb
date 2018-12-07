@@ -18,20 +18,25 @@
                 <% end %>
             <% end %>
 
-<p>Localisation de la friche "<%= @city.place.name %>" situé à <%= @city.name %>: </p>
+<% if user_signed_in? %>
+    <p>Localisation "<%= @city.place.name %>" in <%= @city.name %>: </p>
 
-    <div id="map"></div>
+        <div id="map"></div>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.googlejs_api %>&callback=initMap"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.googlejs_api %>&callback=initMap"></script>
 
-    <script>
-function initMap() {
-  // Localisation test pour paris
-  var paris = {lat: <%= @city.place.latitude %> , lng: <%= @city.place.longitude %> };
-  // la map est centrée sur paris
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 15, center: paris});
-  // le marker est positionné sur paris
-  var marker = new google.maps.Marker({position: paris, map: map});
-}
-    </script>
+        <script>
+    function initMap() {
+    // Localisation test pour paris
+    var paris = {lat: <%= @city.place.latitude %> , lng: <%= @city.place.longitude %> };
+    // la map est centrée sur paris
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 15, center: paris});
+    // le marker est positionné sur paris
+    var marker = new google.maps.Marker({position: paris, map: map});
+    }
+        </script>
+<% else %>
+    <br><br>
+    Please Login to see localisation of the place.
+<% end %>
