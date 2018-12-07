@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'mailjet'
 gem 'sentient_user'
-
+gem 'rails_admin'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
