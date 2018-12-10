@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   get 'cities/index'
   get 'cities/show'
   root 'home#index'
+  get 'events/new', to: 'events#new'
+  post 'events/new', to: 'events#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
