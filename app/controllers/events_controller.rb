@@ -10,4 +10,10 @@ class EventsController < ApplicationController
     @place_of_event = Place.find(Event.find(params[:id]).place_id)
   end
 
+  def events_params
+    params.require(:events).permit(:task, :picture1)
+    params.require(:events).permit(:task, :picture2)
+    params.require(:events).permit(:task, :picture3)
+  end
+
 end
