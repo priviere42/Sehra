@@ -4,7 +4,7 @@ class User < ApplicationRecord
 devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-after_create :send_welcome_mail
+# after_create :send_welcome_mail
 
   has_many :votes, dependent: :destroy
   has_many :events, through: :votes
