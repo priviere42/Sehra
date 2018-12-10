@@ -1,0 +1,7 @@
+<div class="section">
+<%= form_for :new do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :description %>
+  <%= f.collection_select :city_id, City.order(:name), :id,:name %>
+  <%= f.submit 'Send' %>
+<% end %>

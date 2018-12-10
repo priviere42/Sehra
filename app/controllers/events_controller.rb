@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.where(:active => true)
   end
 
   def show
@@ -16,4 +16,14 @@ class EventsController < ApplicationController
     params.require(:events).permit(:task, :picture3)
   end
 
+  def create
+  	@event_new = Event.new(name: params[:new][:name], description: params[:new][:description], place_id: Place.find_by(city_id: params[:new][:city_id]).id)
+
+  	if @event_new.save!
+  		redirect_to root_path
+  	else 
+  		redirect_to events_new_path
+  	end
+
+  end
 end
