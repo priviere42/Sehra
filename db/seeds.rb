@@ -32,6 +32,8 @@ end
     User.create!(email: "user#{index+1}@mail.com", password: "password", first_name: Faker::Name.first_name ,last_name: Faker::Name.last_name)
 end
 
+User.create!(email: "admin@admin.com", password: "adminpassword", first_name: "Admin", last_name: "Admin", admin: true)
+
 user = 1
 event = 1
 
