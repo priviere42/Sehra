@@ -10,7 +10,7 @@ after_create :send_welcome_mail
   has_many :events, through: :votes
 
   def send_welcome_mail
-	  UserMailer.welcome_email(self).deliver_now!
+	#  UserMailer.welcome_email(self).deliver_now!
   end
 
     # creates a new vote row with event_id and user_id
