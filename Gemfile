@@ -32,6 +32,7 @@ gem 'devise'
 gem 'mailjet'
 gem 'sentient_user'
 gem 'rails_admin'
+gem "google-cloud-storage"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -2,13 +2,29 @@
 <br>
 <%= @event.description %>
 <br>
-<%= image_tag(@event.image1, size: "300") %>
-<% if @event.image2? %>
-<%= image_tag(@event.image2, size: "300") %>
-<% end %>
-<% if @event.image3? %>
-<%= image_tag(@event.image3, size: "300") %>
-<% end %>
+
+        <% if @event.picture1.attached? %> 
+            <%= image_tag(@event.picture1, size: "300") %> 
+        <% else %>
+            <%= image_tag(@event.image1, size: "300") %>
+        <% end %>
+
+        <% if @event.picture2.attached? %>
+            <%= image_tag(@event.picture2, size: "300") %> 
+        <% else %>
+            <% if @event.image2? %>
+                <%= image_tag(@event.image2, size: "300") %>
+            <% end %>
+        <% end %>
+
+        <% if @event.picture3.attached? %>
+            <%= image_tag(@event.picture3, size: "300") %> 
+        <% else %>
+            <% if @event.image3? %>
+                <%= image_tag(@event.image2, size: "300") %>
+            <% end %>
+        <% end %>
+
 <br>
 <%= @place_of_event.name %>
 <br>

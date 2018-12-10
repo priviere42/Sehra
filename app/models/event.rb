@@ -1,4 +1,8 @@
 class Event < ApplicationRecord
+    validates :name, presence: true
+    validates :description, presence: true
+    validates :place_id, presence: true
+
     belongs_to :place
     has_many :votes, dependent: :destroy
     has_many :users, through: :votes
