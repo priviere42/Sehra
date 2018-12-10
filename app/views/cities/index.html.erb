@@ -1,6 +1,6 @@
 <% @cities.each do |city| %>
 
-    <%= link_to cities_show_path(id: city) do %>
+    <%= link_to city_path(id: city) do %>
         <%= city.name %>
         <%= image_tag(city.image_url, size: "300") %>
     <% end %>

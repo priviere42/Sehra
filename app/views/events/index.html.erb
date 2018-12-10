@@ -1,5 +1,5 @@
 <% @events.order(:votes_count).reverse_order.each do |event| %>
-    <%= link_to events_show_path(id: event) do %>
+    <%= link_to event_path(id: event) do %>
 
         <% if event.picture1.attached? %> 
             <%= image_tag(event.picture1, size: "100") %> 
@@ -15,5 +15,5 @@
 
 <br>
 <% if user_signed_in? %>
-    <%= link_to "Proposer un projet", events_new_path %>
+    <%= link_to "Proposer un projet", new_event_path %>
 <% end %>

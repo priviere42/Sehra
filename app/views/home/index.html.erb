@@ -1,13 +1,13 @@
 <% @cities.each do |city| %>
 
-    <%= link_to cities_show_path(id: city) do %>
+    <%= link_to city_path(id: city) do %>
         <%= city.name %>
         <br>
     <% end %>
             Events: 
             <br>
             <% city.place.events.where(:active=>true).each do |event| %>
-                <%= link_to events_show_path(id: event) do %>
+                <%= link_to event_path(id: event) do %>
 
                     <% if event.picture1.attached? %> 
                         <%= image_tag(event.picture1, size: "50") %> 

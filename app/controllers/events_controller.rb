@@ -5,9 +5,9 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
-    @city_of_event = City.find(Place.find(Event.find(params[:id]).place_id).id)
-    @place_of_event = Place.find(Event.find(params[:id]).place_id)
+    @event = Event.friendly.find(params[:id])
+    @city_of_event = City.find(Place.find(Event.friendly.find(params[:id]).place_id).id)
+    @place_of_event = Place.find(Event.friendly.find(params[:id]).place_id)
   end
 
   def events_params

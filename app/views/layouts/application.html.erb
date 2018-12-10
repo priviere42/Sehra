@@ -20,23 +20,25 @@
 <% if user_signed_in? && current_user.admin? %>
 <li> Vous êtes le KING du site! </li>
 <li> <%= link_to "Home", root_path %> </li>
-<li> <%= link_to "Cities", cities_index_path %> </li>
-<li> <%= link_to "Events", events_index_path %> </li>
+<li> <%= link_to "Cities", cities_path %> </li>
+<li> <%= link_to "Events", events_path %> </li>
 <li> <%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li>
 <li> <%= link_to "Admin Dashboard", rails_admin_path %> </li>
 
 <% elsif user_signed_in? %>
 <li> Vous êtes bien connecté en tant que <%= current_user.first_name %>. </li>
+<li> Vous avez voté pour <%= current_user.votes.count %> projets. </li>
 <li> <%= link_to "Home", root_path %> </li>
-<li> <%= link_to "Cities", cities_index_path %> </li>
-<li> <%= link_to "Events", events_index_path %> </li>
-<li> <%= link_to "Proposer un Projet", events_new_path %> </li>
+<li> <%= link_to "Cities", cities_path %> </li>
+<li> <%= link_to "Events", events_path %> </li>
+<li> <%= link_to "Proposer un Projet", new_event_path %> </li>
+<li> <%= link_to "Edit Account", edit_user_registration_path %> </li>
 <li> <%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li>
 
 <% else %>
 <li> <%= link_to "Home", root_path %> </li>
-<li> <%= link_to "Cities", cities_index_path %> </li>
-<li> <%= link_to "Events", events_index_path %> </li>
+<li> <%= link_to "Cities", cities_path %> </li>
+<li> <%= link_to "Events", events_path %> </li>
 <li> <%= link_to "Log in", new_user_session_path %> </li>
 <li> <%= link_to "Sign up", new_user_registration_path %> </li>
 

@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 
 <div class="section">
-<%= form_for :new do |f| %>
+<%= form_for :new, url: events_path do |f| %>
   Name of the event:
   <br>
   <%= f.text_field :name %>

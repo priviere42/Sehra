@@ -25,7 +25,7 @@ Place.create!(name: "Building", address: "6 Main Street", image_url: "place/6.jp
 
 
 20.times do |index|
-    Event.create!(name: Faker::StarWars.character, description: Faker::StarWars.quote, image1: "event/#{rand(1..6)}.jpg", image2: "event/potato.jpg", image3: "event/potato.jpg", place_id: rand(1..6), active: true)
+    Event.create!(name: Faker::StarWars.unique.character, description: Faker::StarWars.quote, image1: "event/#{rand(1..6)}.jpg", image2: "event/potato.jpg", image3: "event/potato.jpg", place_id: rand(1..6), active: true)
 end
 
 20.times do |index|

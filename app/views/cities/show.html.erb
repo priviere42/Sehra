@@ -11,7 +11,7 @@
         <%= image_tag(@city.place.image_url, size: "200") %>
             Events: 
             <% @city.place.events.each do |event| %>
-                <%= link_to events_show_path(id: event) do %>
+                <%= link_to event_path(id: event) do %>
 
                     <% if event.picture1.attached? %> 
                         <%= image_tag(event.picture1, size: "50") %> 
