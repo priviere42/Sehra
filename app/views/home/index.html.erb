@@ -53,16 +53,18 @@
 										</a>
 										<ul class="dropdown-menu">
                                             <li class="dropdown">
-												<a class="dropdown-toggle">
-													<i class="et-telescope"></i><%=link_to 'VOIR LES PROJETS', events_index_path%>
+												<a class="dropdown-toggle" href="#">
+													<i class="et-telescope"></i> <%= link_to 'VOIR LES PROJETS', events_path %>
 												</a>
 											</li>
-                                            <li class="divider"></li>											
+                                            <li class="divider"></li>	
+                                            <% if user_signed_in? %>										
                                             <li class="dropdown">
 												<a class="dropdown-toggle">
-													<i class="et-pencil"></i>
+													<i class="et-pencil"></i> <%= link_to 'PROPOSER UN PROJET', new_event_path %>
 												</a>
 											</li>
+											<% end %>
 											<li class="dropdown">
 												<a class="dropdown-toggle" href="#">
 													<i class="et-trophy"></i> VOTER 
@@ -961,15 +963,13 @@
 		<!-- JAVASCRIPT FILES -->
 		<script>var plugin_path = 'assets/plugins/';</script>
  	
-
+<!-- 
 ********************* DECOMMENTER CECI SI PROBLEMES AVEC LE JQUERY *********************************
 
-<!-- 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> 
- -->
 
 **************************************************************************************************** 
-	
  -->
 		<!-- REVOLUTION SLIDER -->
 		<%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.tools.min' %>
@@ -983,10 +983,6 @@
 </html>
 
 <!--
-<%= link_to "Cities", cities_index_path %>
-<br><br>
-<%= link_to "Events", events_index_path %>
-<br><br>
 
 
 <% @cities.each do |city| %>
