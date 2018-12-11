@@ -11,12 +11,12 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require activestorage
-//= require turbolinks
 //= require plugins/jquery/jquery-3.3.1.min
-//= require js/scripts
-//= require plugins/owl-carousel/owl.carousel.min
 //= require plugins/slider.revolution/js/jquery.themepunch.tools.min
 //= require plugins/slider.revolution/js/jquery.themepunch.revolution.min
+//= require plugins/owl-carousel/owl.carousel.min
+//= require activestorage
+//= require turbolinks
+//= require js/scripts
 //= require js/view/demo.revolution_slider
 //= require_tree .
