@@ -15,7 +15,6 @@
  *= require css/layout
  *= require plugins/bootstrap/css/bootstrap.min
  *= require css/header-1
- *= require css/color_scheme/green.css
  *= require plugins/slider.revolution/css/extralayers
  *= require plugins/slider.revolution/css/settings
  *= require_tree .
@@ -24,5 +23,5 @@
 
 #map {
 	height: 400px; 
-	width: 100%; 
+	width: 100%;
 }
