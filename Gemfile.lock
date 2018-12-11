@@ -74,6 +74,8 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.3)
+    countdown (0.1.0)
+      json
     crass (1.0.4)
     declarative (0.0.10)
     declarative-option (0.1.0)
@@ -141,6 +143,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    json (2.1.0)
     jwt (2.1.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
@@ -329,6 +332,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  countdown
   devise
   faker
   friendly_id
