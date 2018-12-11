@@ -36,3 +36,63 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+                  <form class="m-0 sky-form boxed" action="#" method="post">
+                    <header>
+                      <i class="fa fa-users"></i> Register
+                      </header>
+
+                    <fieldset class="m-0">          
+                      <label class="input">
+                        <i class="ico-append fa fa-envelope"></i>
+                        <input type="text" placeholder="Email address">
+                        <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+                      </label>
+                    
+                      <label class="input">
+                        <i class="ico-append fa fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                        <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+                      </label>
+                    
+                      <label class="input">
+                        <i class="ico-append fa fa-lock"></i>
+                        <input type="password" placeholder="Confirm password">
+                        <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+                      </label>
+
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="input">
+                            <input type="text" placeholder="First name">
+                          </label>
+                        </div>
+                        <div class="col col-md-6">
+                          <label class="input">
+                            <input type="text" placeholder="Last name">
+                          </label>
+                        </div>
+                      </div>
+
+                      <label class="select">
+                        <select>
+                          <option value="0" selected disabled>Gender</option>
+                          <option value="1">Male</option>
+                          <option value="2">Female</option>
+                          <option value="3">Other</option>
+                        </select>
+                        <i></i>
+                      </label>
+                      
+                      <div class="mt-20">
+                        <label class="checkbox m-0"><input class="checked-agree" type="checkbox" name="checkbox"><i></i>I agree to the <a href="#" data-toggle="modal" data-target="#termsModal">Terms of Service</a></label>
+                        <label class="checkbox m-0"><input type="checkbox" name="checkbox"><i></i>I want to receive news and  special offers</label>
+                      </div>
+                    </fieldset>
+
+                    <div class="row mb-20">
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> REGISTER</button>
+                      </div>
+                    </div>
+
+                  </form>

@@ -111,9 +111,13 @@
 												<h4><i class="et-profile-male"></i> PROFIL</h4>    
 											</li>
                                             <li class="dropdown">
+                                            	<% if !user_signed_in? %>
 												<a class="dropdown-toggle" href="#">
-													<i class="et-key"></i> SIGN-IN / SIGN-OUT
+													<i class="et-key"></i> <%= link_to 'SIGN-IN', new_user_registration_path %> / <%= link_to 'LOG-IN', new_user_session_path %>
 												</a>
+												<% else %>
+												    <i class="et-key"></i> <%= link_to 'LOG-OUT', destroy_user_session_path %>/ <%= link_to 'EDIT PROFILE', edit_user_registration_path %>
+												    <% end %>
 											</li>
                                             <li class="dropdown">
 												<a class="dropdown-toggle" href="#">
@@ -867,15 +871,13 @@
 						<div class="col-md-2">
 
 							<!-- Links -->
-							<h4 class="letter-spacing-1">EXPLORE SMARTY</h4>
+							<h4 class="letter-spacing-1">EXPLORE SEHRA</h4>
 							<ul class="footer-links list-unstyled">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Our Services</a></li>
-								<li><a href="#">Our Clients</a></li>
-								<li><a href="#">Our Pricing</a></li>
-								<li><a href="#">Smarty Tour</a></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Accueil</a></li>
+								<li><a href="#">Villes</a></li>
+								<li><a href="#">Projets</a></li>
+								<li><a href="sehra.service@gmail.com">Nous contacter</a></li>
+
 							</ul>
 							<!-- /Links -->
 
@@ -942,7 +944,7 @@
 							<li>&bull;</li>
 							<li><a href="#">Privacy</a></li>
 						</ul>
-						&copy; All Rights Reserved, Company LTD
+						&copy; All Rights Reserved, Sehra LTD
 					</div>
 				</div>
 			</footer>
