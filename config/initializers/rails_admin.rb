@@ -4,6 +4,37 @@ RailsAdmin.config do |config|
   config.authorize_with do
     redirect_to main_app.root_path unless warden.user.admin == true 
   end
+
+  config.model 'Vote' do
+    visible false
+  end
+
+  config.model 'City' do
+    list do
+      field :name
+      field :description
+    end
+  end
+
+  config.model 'Event' do
+    list do
+      field :name
+      field :description
+      field :active
+      field :votes_count
+      field :place
+    end
+  end
+
+  config.model 'Place' do
+    list do
+      field :name
+      field :address
+      field :status
+      field :city
+    end
+  end
+
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user

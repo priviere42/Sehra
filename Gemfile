@@ -33,6 +33,8 @@ gem 'devise'
 gem 'mailjet'
 gem 'sentient_user'
 gem 'rails_admin'
+gem "google-cloud-storage"
+gem 'friendly_id'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
