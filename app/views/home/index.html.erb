@@ -1,24 +1,4 @@
-	<!--
-		AVAILABLE BODY CLASSES:
-		
-		smoothscroll 			= create a browser smooth scroll
-		enable-animation		= enable WOW animations
 
-		bg-grey					= grey background
-		grain-grey				= grey grain background
-		grain-blue				= blue grain background
-		grain-green				= green grain background
-		grain-blue				= blue grain background
-		grain-orange			= orange grain background
-		grain-yellow			= yellow grain background
-		
-		boxed 					= boxed layout
-		pattern1 ... patern11	= pattern background
-		menu-vertical-hide		= hidden, open on click
-		
-		BACKGROUND IMAGE [together with .boxed class]
-		data-background="assets/images/_smarty/boxed_background/1.jpg"
-	-->
 	<body class="smoothscroll enable-animation">
 
 		<!-- SLIDE TOP -->
@@ -57,7 +37,7 @@
 
 			</div>
 
-			<a class="slidetop-toggle" href="#"><!-- toggle button --></a>
+			<!-- <a class="slidetop-toggle" href="#"> toggle button </a> -->
 
 		</div>
 		<!-- /SLIDE TOP -->
@@ -65,211 +45,6 @@
 
 		<!-- wrapper -->
 		<div id="wrapper">
-
-			<!-- 
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
-			<div id="header" class="navbar-toggleable-md sticky clearfix">
-
-				<!-- TOP NAV -->
-				<header id="topNav">
-					<div class="container">
-
-						<!-- Mobile Menu Button -->
-						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-							<i class="fa fa-bars"></i>
-						</button>
-
-						<!-- BUTTONS -->
-						<ul class="float-right nav nav-pills nav-second-main">
-
-							<!-- SEARCH -->
-							<li class="search">
-								<a href="javascript:;">
-									<i class="fa fa-search"></i>
-								</a>
-								<div class="search-box">
-									<form action="page-search-result-1.html" method="get">
-										<div class="input-group">
-											<input type="text" name="src" placeholder="Search" class="form-control" />
-											<span class="input-group-btn">
-												<button class="btn btn-primary" type="submit">Search</button>
-											</span>
-										</div>
-									</form>
-								</div> 
-							</li>
-							<!-- /SEARCH -->
-
-						</ul>
-						<!-- /BUTTONS -->
-
-						<!-- Logo -->
-						<a class="logo float-left" href="index.html">
-							<img src="assets/images/_smarty/logo2.png" alt="" />
-						</a>
-
-						<!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
-							<nav class="nav-main">
-
-								<!--
-									NOTE
-									
-									For a regular link, remove "dropdown" class from LI tag and "dropdown-toggle" class from the href.
-									Direct Link Example: 
-
-									<li>
-										<a href="#">HOME</a>
-									</li>
-								-->
-								<ul id="topMain" class="nav nav-pills nav-main">
-									<li class="dropdown"><!-- HOME -->
-										<a class="dropdown-toggle noicon" href="#">
-											HOME
-										</a>
-									</li>
-									<li class="dropdown"><!-- PAGES -->
-										<a class="dropdown-toggle" href="#">
-											VILLES
-										</a>
-										<ul class="dropdown-menu">
-											<li><a href="#" data-toggle="tooltip" data-placement="top" title="Paris"><span class="badge badge-success float-right">new</span> PARIS</a></li>
-											<li><a href="#" data-toggle="tooltip" data-placement="top" title="Marseille"><span class="badge badge-success float-right">new</span> MARSEILLE</a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Toulouse"> TOULOUSE</a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Nice"> NICE</a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Lyon"> <span class="badge badge-success float-right">new</span> LYON</a></li>
-                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Bordeaux"> BORDEAUX</a></li>
-										</ul>
-									</li>
-									<li class="dropdown"><!-- FEATURES -->
-										<a class="dropdown-toggle" href="#">
-											PROJETS
-										</a>
-										<ul class="dropdown-menu">
-                                            <li class="dropdown">
-												<a class="dropdown-toggle" href="#">
-													<i class="et-telescope"></i> VOIR LES PROJETS
-												</a>
-											</li>
-                                            <li class="divider"></li>											
-                                            <li class="dropdown">
-												<a class="dropdown-toggle" href="#">
-													<i class="et-pencil"></i> PROPOSER 
-												</a>
-											</li>
-											<li class="dropdown">
-												<a class="dropdown-toggle" href="#">
-													<i class="et-trophy"></i> VOTER 
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li class="dropdown"><!-- PRINCIPES -->
-										<a class="dropdown-toggle noicon" href="#">
-											PRINCIPES
-										</a>
-									</li>
-									<li class="dropdown"><!-- FEATURES -->
-										<a class="dropdown-toggle" href="#">
-											A PROPOS
-										</a>
-										<ul class="dropdown-menu">
-											<li class="dropdown">
-												<a class="dropdown-toggle" href="#">
-													<i class="et-genius"></i> TEAM
-												</a>
-											</li>											
-                                            <li class="dropdown">
-												<a class="dropdown-toggle" href="#">
-													<i class="et-lightbulb"></i> FAQ
-												</a>
-											</li>
-											<li class="dropdown">
-												<a class="dropdown-toggle" href="#">
-													<i class="et-envelope"></i> CONTACT 
-												</a>
-											</li>
-										</ul>
-									</li>
-                                    
-
-									<!-- 
-										MENU ANIMATIONS
-											.nav-animate-fadeIn
-											.nav-animate-fadeInUp
-											.nav-animate-bounceIn
-											.nav-animate-bounceInUp
-											.nav-animate-flipInX
-											.nav-animate-flipInY
-											.nav-animate-zoomIn
-											.nav-animate-slideInUp
-
-											.nav-hover-animate 		= animate text on hover
-
-											.hover-animate-bounceIn = bounceIn effect on mouse over of main menu
-									-->
-									<li class="dropdown nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn"><!-- THEMATIC -->
-										<a class="dropdown-toggle" href="#">
-											<span class="badge badge-danger float-right fs-11">Connecté</span>
-											<b>COMPTE</b>
-										</a>
-                                        <ul class="dropdown-menu">
-											<li class="dropdown">
-												<h4><i class="et-profile-male"></i> PROFIL</h4>    
-											</li>
-                                            <li class="dropdown">
-												<a class="dropdown-toggle" href="#">
-													<i class="et-key"></i> SIGN-IN / SIGN-OUT
-												</a>
-											</li>
-                                            <li class="dropdown">
-												<a class="dropdown-toggle" href="#">
-													<i class="et-presentation"></i> MES PROJETS
-												</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-
-							</nav>
-						</div>
-
-					</div>
-				</header>
-				<!-- /Top Nav -->
-
-			</div>
-
-
 
 			<!-- REVOLUTION SLIDER -->
 			<section id="slider" class="slider fullwidthbanner-container roundedcorners">
@@ -373,9 +148,9 @@
 								data-endelementdelay="0.1"
 								data-endspeed="1000"
 								data-endeasing="Power4.easeIn" style="z-index: 10;">
-								<a href="#purchase" class="btn btn-default btn-lg">
-									<span>Proposer un projet</span> 
-								</a>
+							
+									<%= link_to "PROPOSER UN PROJET", events_index_path, class: "btn btn-default btn-lg"%>
+								
 							</div>
 
 						</li>
@@ -536,9 +311,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="1000"
 								data-endeasing="Power4.easeIn" style="z-index: 3;">
-								<a href="#purchase" class="btn btn-default btn-lg">
-									<span>Voir les projets</span> 
-								</a>
+								<%= link_to "PROPOSER UN PROJET", events_index_path, class: "btn btn-default btn-lg"%>
 							</div>
 
 						</li>
@@ -1157,12 +930,12 @@
 		<a href="#" id="toTop"></a>
 
 
-		<!-- PRELOADER -->
+		<!-- PRELOADER 
 		<div id="preloader">
 			<div class="inner">
 				<span class="loader"></span>
 			</div>
-		</div><!-- /PRELOADER -->
+		</div>/PRELOADER -->
 
 
 		<!-- JAVASCRIPT FILES -->
