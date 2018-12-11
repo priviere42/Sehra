@@ -129,7 +129,7 @@
 
 						<!-- Logo -->
 						<a class="logo float-left" href="index.html">
-							<img src="assets/images/_smarty/logo2.png" alt="" />
+							<%= image_tag('logo2.png') %>
 						</a>
 
 						<!-- 
@@ -307,7 +307,8 @@
 						<!-- SLIDE  -->
 						<li data-transition="random" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
 
-							<img src="assets/images/_smarty/1x1.png" data-lazyload="https://www.nyttrom.no/wp-content/uploads/2015/02/20140401_NY_N16_publication.jpg" alt="" data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat" />
+<!-- 							<img src="assets/images/_smarty/1x1.png" data-lazyload="https://www.nyttrom.no/wp-content/uploads/2015/02/20140401_NY_N16_publication.jpg" alt="" data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat" /> -->
+							<%= image_tag('1x1.png') %>
 
 							<div class="tp-dottedoverlay twoxtwo"><!-- dotted overlay --></div>
 							<div class="overlay dark-3"><!-- dark overlay [1 to 9 opacity] --></div>
@@ -973,15 +974,20 @@
 							"autoPlay": true (or ms. eg: 4000)
 							"navigation": true
 							"pagination": true
+		
 					-->
-					<div class="text-center">
+
+<!-- 					<div class="text-center">
 						<div class="owl-carousel m-0" data-plugin-options='{"singleItem": false, "autoPlay": true}'>
 							<div>
 								<img class="img-fluid" src="demo_files/images/brands/1.jpg" alt="">
 							</div>
+
+
 							<div>
 								<img class="img-fluid" src="demo_files/images/brands/2.jpg" alt="">
 							</div>
+
 							<div>
 								<img class="img-fluid" src="demo_files/images/brands/3.jpg" alt="">
 							</div>
@@ -989,19 +995,19 @@
 								<img class="img-fluid" src="demo_files/images/brands/4.jpg" alt="">
 							</div>
 							<div>
-								<img class="img-fluid" src="demo_files/images/brands/5.jpg" alt="">
+								<img class="img-fluid" src="demo_files/images/brands/5.jpg" alt="">					
+  							</div>
+							<div>
+								<img class="img-fluid" src="demo_files/images/brands/6.jpg" alt="">				
 							</div>
 							<div>
-								<img class="img-fluid" src="demo_files/images/brands/6.jpg" alt="">
-							</div>
-							<div>
-								<img class="img-fluid" src="demo_files/images/brands/7.jpg" alt="">
+								<img class="img-fluid" src="demo_files/images/brands/7.jpg" alt="">								
 							</div>
 							<div>
 								<img class="img-fluid" src="demo_files/images/brands/8.jpg" alt="">
 							</div>
 						</div>
-					</div>
+					</div> -->
 
 				</div>
 			</section>
@@ -1167,12 +1173,17 @@
 
 		<!-- JAVASCRIPT FILES -->
 		<script>var plugin_path = 'assets/plugins/';</script>
-		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
-
+		<%= javascript_include_tag 'plugins/jquery/jquery-3.3.1.min' %>
+<!-- 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+ -->
 		<!-- REVOLUTION SLIDER -->
-		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
+		<%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.tools.min' %>
+		<%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.revolution.min' %>
+		<%= javascript_include_tag 'js/view/demo.revolution_slider' %>
+
+<!-- 		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
 		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
-		<script src="assets/js/view/demo.revolution_slider.js"></script>
+		<script src="assets/js/view/demo.revolution_slider.js"></script> -->
 
 		<!-- SCRIPTS -->
 		

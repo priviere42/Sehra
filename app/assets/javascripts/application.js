@@ -18,5 +18,6 @@
 //= require plugins/slider.revolution/js/jquery.themepunch.tools.min
 //= require plugins/slider.revolution/js/jquery.themepunch.revolution.min
 //= require js/view/demo.revolution_slider
-//= require demo_files/styleswitcher/styleswitcher
+//= require jquery
+//= require jquery_ujs
 //= require_tree .
