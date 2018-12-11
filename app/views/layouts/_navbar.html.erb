@@ -29,7 +29,7 @@
 									<li class="dropdown"><!-- PAGES -->
 										<%= link_to "VILLES", events_index_path, class: "dropdown-toggle" %>
 										<ul class="dropdown-menu">
-											<% @cities.each do |city| %>
+											<% City.all.each do |city| %>
 											<li>
 												<%= link_to cities_show_path(id: city) do %>
         										<%= city.name %>
@@ -49,9 +49,9 @@
 									</li>
 									<li class="dropdown">
 										<% if user_signed_in? %>
-											<%= link_to "PROPOSER UN PROJET", events_index_path, class: "dropdown-toggle" %>
+											<%= link_to "PROPOSER UN PROJET", events_index_path, class: "dropdown-toggle noicon" %>
 										<%else%>
-											<%= link_to "PROPOSER UN PROJET", new_user_session_path, class: "dropdown-toggle" %>
+											<%= link_to "PROPOSER UN PROJET", new_user_session_path, class: "dropdown-toggle noicon"%>
 										<%end%>
 									</li>
 								<% if user_signed_in? %>
