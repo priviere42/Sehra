@@ -1,64 +1,7 @@
-	<!--
-		AVAILABLE BODY CLASSES:
-		
-		smoothscroll 			= create a browser smooth scroll
-		enable-animation		= enable WOW animations
-
-		bg-grey					= grey background
-		grain-grey				= grey grain background
-		grain-blue				= blue grain background
-		grain-green				= green grain background
-		grain-blue				= blue grain background
-		grain-orange			= orange grain background
-		grain-yellow			= yellow grain background
-		
-		boxed 					= boxed layout
-		pattern1 ... patern11	= pattern background
-		menu-vertical-hide		= hidden, open on click
-		
-		BACKGROUND IMAGE [together with .boxed class]
-		data-background="assets/images/_smarty/boxed_background/1.jpg"
-	-->
 	<body class="smoothscroll enable-animation">
 
 		<!-- SLIDE TOP -->
 		<div id="slidetop">
-
-			<div class="container">
-				
-				<div class="row">
-
-					<div class="col-md-4">
-						<h6><i class="icon-heart"></i> WHY SMARTY?</h6>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. </p>
-					</div>
-
-					<div class="col-md-4">
-						<h6><i class="fa-facheck"></i> RECENTLY VISITED</h6>
-						<ul class="list-unstyled">
-							<li><a href="#"><i class="fa fa-angle-right"></i> Consectetur adipiscing elit amet</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> This is a very long text, very very very very very very very very very very very very </a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> Dolor sit amet,consectetur adipiscing elit amet</a></li>
-							<li><a href="#"><i class="fa fa-angle-right"></i> Consectetur adipiscing elit amet,consectetur adipiscing elit</a></li>
-						</ul>
-					</div>
-
-					<div class="col-md-4">
-						<h6><i class="icon-envelope"></i> CONTACT INFO</h6>
-						<ul class="list-unstyled">
-							<li><b>Address:</b> PO Box 21132, Here Weare St, <br /> Melbourne, Vivas 2355 Australia</li>
-							<li><b>Phone:</b> 1-800-565-2390</li>
-							<li><b>Email:</b> <a href="mailto:support@yourname.com">support@yourname.com</a></li>
-						</ul>
-					</div>
-
-				</div>
-
-			</div>
-
-			<a class="slidetop-toggle" href="#"><!-- toggle button --></a>
-
 		</div>
 		<!-- /SLIDE TOP -->
 
@@ -66,32 +9,6 @@
 		<!-- wrapper -->
 		<div id="wrapper">
 
-			<!-- 
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
 			<div id="header" class="navbar-toggleable-md sticky clearfix">
 
 				<!-- TOP NAV -->
@@ -103,54 +20,14 @@
 							<i class="fa fa-bars"></i>
 						</button>
 
-						<!-- BUTTONS -->
-						<ul class="float-right nav nav-pills nav-second-main">
-
-							<!-- SEARCH -->
-							<li class="search">
-								<a href="javascript:;">
-									<i class="fa fa-search"></i>
-								</a>
-								<div class="search-box">
-									<form action="page-search-result-1.html" method="get">
-										<div class="input-group">
-											<input type="text" name="src" placeholder="Search" class="form-control" />
-											<span class="input-group-btn">
-												<button class="btn btn-primary" type="submit">Search</button>
-											</span>
-										</div>
-									</form>
-								</div> 
-							</li>
-							<!-- /SEARCH -->
-
-						</ul>
-						<!-- /BUTTONS -->
-
 						<!-- Logo -->
 						<a class="logo float-left" href="index.html">
 							<%= image_tag('logo2.png') %>
 						</a>
 
-						<!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
 						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
 							<nav class="nav-main">
 
-								<!--
-									NOTE
-									
-									For a regular link, remove "dropdown" class from LI tag and "dropdown-toggle" class from the href.
-									Direct Link Example: 
-
-									<li>
-										<a href="#">HOME</a>
-									</li>
-								-->
 								<ul id="topMain" class="nav nav-pills nav-main">
 									<li class="dropdown"><!-- HOME -->
 										<a class="dropdown-toggle noicon" href="#">
@@ -176,14 +53,14 @@
 										</a>
 										<ul class="dropdown-menu">
                                             <li class="dropdown">
-												<a class="dropdown-toggle" href="#">
-													<i class="et-telescope"></i> VOIR LES PROJETS
+												<a class="dropdown-toggle">
+													<i class="et-telescope"></i><%=link_to 'VOIR LES PROJETS', events_index_path%>
 												</a>
 											</li>
                                             <li class="divider"></li>											
                                             <li class="dropdown">
-												<a class="dropdown-toggle" href="#">
-													<i class="et-pencil"></i> PROPOSER 
+												<a class="dropdown-toggle">
+													<i class="et-pencil"></i>
 												</a>
 											</li>
 											<li class="dropdown">
@@ -222,21 +99,6 @@
 									</li>
                                     
 
-									<!-- 
-										MENU ANIMATIONS
-											.nav-animate-fadeIn
-											.nav-animate-fadeInUp
-											.nav-animate-bounceIn
-											.nav-animate-bounceInUp
-											.nav-animate-flipInX
-											.nav-animate-flipInY
-											.nav-animate-zoomIn
-											.nav-animate-slideInUp
-
-											.nav-hover-animate 		= animate text on hover
-
-											.hover-animate-bounceIn = bounceIn effect on mouse over of main menu
-									-->
 									<li class="dropdown nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn"><!-- THEMATIC -->
 										<a class="dropdown-toggle" href="#">
 											<span class="badge badge-danger float-right fs-11">Connecté</span>
@@ -273,41 +135,12 @@
 
 			<!-- REVOLUTION SLIDER -->
 			<section id="slider" class="slider fullwidthbanner-container roundedcorners">
-				<!--
-					Navigation Styles:
-					
-						data-navigationStyle="" theme default navigation
-						
-						data-navigationStyle="preview1"
-						data-navigationStyle="preview2"
-						data-navigationStyle="preview3"
-						data-navigationStyle="preview4"
-						
-					Bottom Shadows
-						data-shadow="1"
-						data-shadow="2"
-						data-shadow="3"
-						
-					Slider Height (do not use on fullscreen mode)
-						data-height="300"
-						data-height="350"
-						data-height="400"
-						data-height="450"
-						data-height="500"
-						data-height="550"
-						data-height="600"
-						data-height="650"
-						data-height="700"
-						data-height="750"
-						data-height="800"
-				-->
+
 				<div class="fullscreenbanner" data-navigationStyle="">
 					<ul class="hide">
 
 						<!-- SLIDE  -->
 						<li data-transition="random" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
-
-<!-- 							<img src="assets/images/_smarty/1x1.png" data-lazyload="https://www.nyttrom.no/wp-content/uploads/2015/02/20140401_NY_N16_publication.jpg" alt="" data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat" /> -->
 							<%= image_tag('1x1.png') %>
 
 							<div class="tp-dottedoverlay twoxtwo"><!-- dotted overlay --></div>
@@ -961,53 +794,7 @@
 						</div>
 
 					</div>
-
-
 					<div class="divider double-line mt-80 mb-80"><!-- divider --></div>
-
-					<!-- 
-						controlls-over		= navigation buttons over the image 
-						buttons-autohide 	= navigation buttons visible on mouse hover only
-						
-						data-plugin-options:
-							"singleItem": true
-							"autoPlay": true (or ms. eg: 4000)
-							"navigation": true
-							"pagination": true
-		
-					-->
-
-<!-- 					<div class="text-center">
-						<div class="owl-carousel m-0" data-plugin-options='{"singleItem": false, "autoPlay": true}'>
-							<div>
-								<img class="img-fluid" src="demo_files/images/brands/1.jpg" alt="">
-							</div>
-
-
-							<div>
-								<img class="img-fluid" src="demo_files/images/brands/2.jpg" alt="">
-							</div>
-
-							<div>
-								<img class="img-fluid" src="demo_files/images/brands/3.jpg" alt="">
-							</div>
-							<div>
-								<img class="img-fluid" src="demo_files/images/brands/4.jpg" alt="">
-							</div>
-							<div>
-								<img class="img-fluid" src="demo_files/images/brands/5.jpg" alt="">					
-  							</div>
-							<div>
-								<img class="img-fluid" src="demo_files/images/brands/6.jpg" alt="">				
-							</div>
-							<div>
-								<img class="img-fluid" src="demo_files/images/brands/7.jpg" alt="">								
-							</div>
-							<div>
-								<img class="img-fluid" src="demo_files/images/brands/8.jpg" alt="">
-							</div>
-						</div>
-					</div> -->
 
 				</div>
 			</section>
@@ -1173,29 +960,21 @@
 
 		<!-- JAVASCRIPT FILES -->
 		<script>var plugin_path = 'assets/plugins/';</script>
-<!-- 	
+ 	
 
 ********************* DECOMMENTER CECI SI PROBLEMES AVEC LE JQUERY *********************************
 
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<!-- 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> 
-
+ -->
 
 **************************************************************************************************** 
-	-->
-
-
-
-<!-- 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+	
  -->
 		<!-- REVOLUTION SLIDER -->
 		<%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.tools.min' %>
 		<%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.revolution.min' %>
 		<%= javascript_include_tag 'js/view/demo.revolution_slider' %>
-
-<!-- 		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
-		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
-		<script src="assets/js/view/demo.revolution_slider.js"></script> -->
 
 		<!-- SCRIPTS -->
 		
