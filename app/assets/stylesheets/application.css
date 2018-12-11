@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  *= require css/essentials
  *= require css/layout
@@ -19,6 +18,8 @@
  *= require css/color_scheme/green.css
  *= require plugins/slider.revolution/css/extralayers
  *= require plugins/slider.revolution/css/settings
+ *= require_tree .
+
  */
 
 #map {
