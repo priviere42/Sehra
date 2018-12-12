@@ -9,70 +9,38 @@
 
                 <div class="col-12 col-sm-5 col-md-5 col-lg-4 order-md-2 order-lg-2 order-sm-2">
 
-                  <!-- ALERT -->
-                  <!--
-                  <div class="alert alert-mini alert-danger mb-30">
-                    <strong>Oh snap!</strong> Login Incorrect!
-                  </div>
-                  -->
-                  <!-- /ALERT -->
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
-                  <!-- register form -->
-                  <form class="m-0 sky-form boxed" action="#" method="post">
-                    <header>
-                      <i class="fa fa-users"></i> S'enregistrer
-                      </header>
 
-                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                  <%= devise_error_messages! %>
+                <div class="field">
+                 <br />
+                  <%= f.text_field :first_name, autofocus: true, placeholder: "Prénom" %></div>
 
-                    <fieldset class="m-0">          
-                      <label class="input">
-                        <i class="ico-append fa fa-envelope"></i>
-                        <%= f.email_field :email, autofocus: true, autocomplete: "email"%>
-                        <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
-                      </label>
-                    
-                      <label class="input">
-                        <i class="ico-append fa fa-lock"></i>
-                        <%= f.password_field :password, autocomplete: "new-password" %>
-                        <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
-                      </label>
-                    
-                      <label class="input">
-                        <i class="ico-append fa fa-lock"></i>
-                        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-                        <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
-                      </label>
+                <div class="field">
+                <br />
+                  <%= f.text_field :last_name, autofocus: true, placeholder: "Nom" %></div>
 
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label class="input">
-                        <%= f.text_field :first_name, autofocus: true %>
-                          </label>
-                        </div>
-                        <div class="col col-md-6">
-                          <label class="input">
-                        <%= f.text_field :last_name, autofocus: true %>
-                          </label>
-                        </div>
-                      </div>
-                      
-                      <div class="mt-20">
-                        <label class="checkbox m-0"><input class="checked-agree" type="checkbox" name="checkbox"><i></i>J'accepte <a href="#" data-toggle="modal" data-target="#termsModal">Terms of Service</a></label>
-                        <label class="checkbox m-0"><input type="checkbox" name="checkbox"><i></i>je veux recevoir la newsletter</label>
-                      </div>
-                    </fieldset>
+                <div class="field">
+                  <br />
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sehra@email.com" %>
+                </div>
 
-                    <div class="row mb-20">
-                      <div class="col-md-12">
-                        <%= f.submit "Sign up" %>
-                        <% end %>
-                      </div>
-                    </div>
+                <div class="field">
+                 <br />
 
-                  </form>
-                  <!-- /register form -->
+                  <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mot de passe" %>
+                </div>
+
+                <div class="field">
+                  <br />
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation" %>
+                </div>
+<br />
+                <div class="actions">
+                  <%= f.submit "Sign up" %>
+                </div>
+              <% end %>  
 
                 </div>
 
@@ -111,6 +79,7 @@
         </div>
 
       </section>
+
 <!--
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
