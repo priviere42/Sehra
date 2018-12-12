@@ -419,50 +419,65 @@
 						<% end %>
                             
 					</div>
-				</div>
-			</section>
-
-
-
-
-			<!-- -->
-			<section>
-				<div class="container">
-					<div class="row">
 					
-						<div class="col-md-4">
-							
-							<div class="heading-title heading-border-bottom heading-color">
-								<h3>Passion</h3>
-							</div>
-							
-							<p>Fabulas definitiones ei pri per recteque hendrerit scriptorem in errem scribentur mel fastidii propriae philosophia cu mea. Utinam ipsum everti necessitatibus at fuisset splendide.</p>
-
-						</div>
-
-						<div class="col-md-4">
-							<div class="heading-title heading-border-bottom heading-color">
-								<h3>Precision</h3>
-							</div>
-							<p>Fabulas definitiones ei pri per recteque hendrerit scriptorem in errem scribentur mel fastidii propriae philosophia cu mea. Utinam ipsum everti necessitatibus at fuisset splendide.</p>
-
-						</div>
-
-						<div class="col-md-4">
-							<div class="heading-title heading-border-bottom heading-color">
-								<h3>Simplicity</h3>
-							</div>
-							<p>Fabulas definitiones ei pri per recteque hendrerit scriptorem in errem scribentur mel fastidii propriae philosophia cu mea. Utinam ipsum everti necessitatibus at fuisset splendide.</p>
-
-						</div>
-
-					</div>
-					<div class="divider double-line mt-80 mb-80"><!-- divider --></div>
-
 				</div>
 			</section>
-			<!-- / -->
+			<!-- COLOR BOXES -->
+			<section class="p-0 b-0">
+				<!--
+					.box-pink
+					.box-blue
+					.box-orange
+					.box-yellow
+					.box-purple
+					.box-red
+					.box-brown
+					.box-green
+					.box-black
+					.box-gray
+					.box-teal
 
+
+				 
+				CREATE YOUR OWN COLORS - CSS EXAMPLE:
+					.box-pink>div:nth-child(1) {
+						background-color:#e2476b;
+					}
+					.box-pink>div:nth-child(2) {
+						background-color:#e9738f;
+					}
+					.box-pink>div:nth-child(3) {
+						background-color:#f09fb2;
+					}
+					.box-pink>div:nth-child(4) {
+						background-color:#f7cbd5;
+					}
+
+				-->
+				<div class="row box-gradient box-gray">
+
+					<div class="col-6 col-sm-3">
+						<p>Villes</p>
+						<h2 class="countTo font-raleway" data-speed="3000"><%= City.count %></h2>
+					</div>
+				
+					<div class="col-6 col-sm-3">
+						<p>Projets</p>						
+						<h2 class="countTo font-raleway" data-speed="3000"><%= Event.count %></h2>
+					</div>
+
+					<div class="col-6 col-sm-3">
+						<p>Votes</p>
+						<h2 class="countTo font-raleway" data-speed="3000"><%= Vote.count %></h2>
+					</div>
+
+					<div class="col-6 col-sm-3">
+						<p>Puissance</p>
+						<h2 class="countTo font-raleway" data-speed="3000">9000</h2>
+					</div>
+				</div>
+			</section>
+			<!-- /COLOR BOXES -->
 		</div>
 		<!-- /wrapper -->
 
@@ -498,8 +513,7 @@
 		<!-- SCRIPTS -->
 		
 		<%= javascript_include_tag 'js/scripts' %>
-	</body>
-</html>
+
 
 <!--
 
