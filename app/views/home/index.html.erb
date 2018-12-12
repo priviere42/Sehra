@@ -346,7 +346,11 @@
 
 						
 						<div class="col-md-3 col-sm-12 text-right"><!-- right btn -->
-							<a href="#purchase" rel="nofollow" target="_blank" class="btn btn-primary btn-lg">Contactez-nous</a>
+							<% if user_signed_in? %>
+								<%= link_to "Proposer un projet", new_event_path, class: "btn btn-primary btn-lg" %>
+							<% else %>
+								<%= link_to "Se connecter", new_user_session_path, class: "btn btn-primary btn-lg" %>
+							<% end %>
 						</div><!-- /right btn -->
 
 					</div>
@@ -356,240 +360,65 @@
 			<!-- /CALLOUT -->
 
 <section>
-				<div class="container">
-
-					<ul class="nav nav-pills mix-filter mb-60">
-						<li data-filter="all" class="filter active"><a href="#">All</a></li>
-						<li data-filter="Hackatons" class="filter"><a href="#">Hackatons</a></li>
-						<li data-filter="Food Fests" class="filter"><a href="#">Food Fests</a></li>
-						<li data-filter="Expositions" class="filter"><a href="#">Expositions</a></li>
-                        <li data-filter="Concerts" class="filter"><a href="#">Concerts</a></li>
-                        <li data-filter="Street Art" class="filter"><a href="#">Street Art</a></li>
-                        <li data-filter="Coworking" class="filter"><a href="#">Coworking</a></li>
-					</ul>
-
-				</div>
 
 				<div id="portfolio" class="portfolio-nogutter">
 
-						<div class="row mix-grid">
+					<div class="row mix-grid">
 
+						<% @cities.each do |city| %>
+						
 							<div class="col-md-4 col-sm-4 mix Expositions Concerts Hackatons"><!-- item -->
 
 								<div class="item-box">
 									<figure>
 										<span class="item-hover">
 											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/8-min.jpg" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-												<!-- details -->
-												<a class="ico-rounded" href="portfolio-single-slider.html">
-													<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-												</a>
-
-											</span>
 										</span>
 
 										<!-- carousel -->
 											
-
 										<div class="owl-carousel buttons-autohide controlls-over m-0" data-plugin-options='{"singleItem": true, "autoPlay": 4000, "navigation": false, "pagination": true, "transitionStyle":"goDown"}'>
 											<div>
-												<img class="img-fluid" src="https://www.laboratoireterritorial.fr/wp-content/uploads/2016/11/industrial-1765362_1920.jpg" width="800" height="553" alt="">
+											    <% if city.place.events.where(:active=>true).first.picture1.attached? %> 
+													<%= image_tag(city.place.events.where(:active=>true).first.picture1, class: "img-fluid", width: "800", height: "553", alt: "") %> 
+												<% else %>
+													<%= image_tag(city.place.events.where(:active=>true).first.image1, class: "img-fluid", width: "800", height: "553", alt: "")%>
+												<% end %>		
 											</div>
 											<div>
-												<img class="img-fluid" src="https://www.urbanpresents.net/wp-content/uploads/2016/01/graffiti-urbex-halle-guterbahnhof-nov-2015-07492.jpg" width="800" height="553" alt="">
+												<% if city.place.events.where(:active=>true).first.picture2.attached? %> 
+													<%= image_tag(city.place.events.where(:active=>true).first.picture2, class: "img-fluid", width: "800", height: "553", alt: "") %> 
+												<% else %>
+													<%= image_tag(city.place.events.where(:active=>true).first.image2, class: "img-fluid", width: "800", height: "553", alt: "")%>
+												<% end %>	
 											</div>
 											<div>
-												<img class="img-fluid" src="https://www.tuxboard.com/photos/2015/10/Vince-J-Urbex-ecole.jpg" width="800" height="553" alt="">
+												<% if city.place.events.where(:active=>true).first.picture3.attached? %> 
+													<%= image_tag(city.place.events.where(:active=>true).first.picture3, class: "img-fluid", width: "800", height: "553", alt: "") %> 
+												<% else %>
+													<%= image_tag(city.place.events.where(:active=>true).first.image3, class: "img-fluid", width: "800", height: "553", alt: "")%>
+												<% end %>
 											</div>
 										</div>
-
 
 										<!-- /carousel -->
 
 									</figure>
 
 									<div class="item-box-desc">
-										<h3 style="text-align:center;">PARIS</h3>
+										<h3 style="text-align:center;"><%= city.name %></h3>
 										<ul class="list-inline categories m-0" style="text-align:center;">
-											<li><a href="#">Expositions</a></li>
-											<li><a href="#">Concerts</a></li>
-                                            <li><a href="#">Hackatons</a></li>
+											<li><a><%= city.description %></a></li>
 										</ul>
 									</div>
 
 								</div>
 
 							</div><!-- /item -->
-
-
-							<div class="col-md-4 col-sm-4 mix Food Fests Street Art Food Fests"><!-- item -->
-
-								<div class="item-box">
-										<div class="owl-carousel buttons-autohide controlls-over m-0" data-plugin-options='{"singleItem": true, "autoPlay": 4000, "navigation": false, "pagination": true, "transitionStyle":"goDown"}'>
-											<div>
-												<img class="img-fluid" src="https://www.tuxboard.com/photos/2015/10/Vince-J-Urbex-ecole.jpg" width="800" height="553" alt="">
-											</div>
-											<div>
-												<img class="img-fluid" src="https://i1.wp.com/portdattache.bzh/wp-content/uploads/2017/04/grand-hall-urbex.jpg?ssl=1" width="800" height="553" alt="">
-											</div>
-											<div>
-												<img class="img-fluid" src="https://www.laboratoireterritorial.fr/wp-content/uploads/2016/11/industrial-1765362_1920.jpg" width="800" height="553" alt="">
-											</div>
-										</div>
-
-									<div class="item-box-desc">
-										<h3 style="text-align:center;">MARSEILLE</h3>
-										<ul class="list-inline categories m-0" style="text-align:center;">
-											<li><a href="#">Street Art</a></li>
-											<li><a href="#">Food Fests</a></li>
-										</ul>
-									</div>
-
-								</div>
-
-							</div><!-- /item -->
-
-
-							<div class="col-md-4 col-sm-4 mix Coworking Street Art"><!-- item -->
-
-								<div class="item-box">
-										<div class="owl-carousel buttons-autohide controlls-over m-0" data-plugin-options='{"singleItem": true, "autoPlay": 4000, "navigation": false, "pagination": true, "transitionStyle":"goDown"}'>
-											<div>
-												<img class="img-fluid" src="https://parallaxpictures.fr/wp-content/uploads/2016/10/Drone-Urbex-Vichy.jpg" width="800" height="553" alt="">
-											</div>
-											<div>
-												<img class="img-fluid" src="https://www.laboratoireterritorial.fr/wp-content/uploads/2016/11/industrial-1765362_1920.jpg" width="800" height="553" alt="">
-											</div>
-											<div>
-												<img class="img-fluid" src="http://www.voyageurs-du-net.com/wp-content/uploads/2014/09/exploration-urbaine-dark-tourism-darmon-richter-house-monument-of-the-bulgarian-communist-party.jpg" width="800" height="553" alt="">
-											</div>
-										</div>
-
-									<div class="item-box-desc">
-										<h3 style="text-align:center;">TOULOUSE</h3>
-										<ul class="list-inline categories m-0" style="text-align:center;">
-											<li><a href="#">Coworking</a></li>
-											<li><a href="#">Street Art</a></li>
-										</ul>
-									</div>
-
-								</div>
-
-							</div><!-- /item -->
+						
+						<% end %>
                             
-                            <div class="col-md-4 col-sm-4 mix Expositions Street Art"><!-- item -->
-
-								<div class="item-box">
-									<figure>
-										<span class="item-hover">
-											<span class="overlay dark-5"></span>
-											<span class="inner">
-
-												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/8-min.jpg" data-plugin-options='{"type":"image"}'>
-													<span class="fa fa-plus fs-20"></span>
-												</a>
-
-												<!-- details -->
-												<a class="ico-rounded" href="portfolio-single-slider.html">
-													<span class="glyphicon glyphicon-option-horizontal fs-20"></span>
-												</a>
-
-											</span>
-										</span>
-
-										<!-- carousel -->
-										<div class="owl-carousel buttons-autohide controlls-over m-0" data-plugin-options='{"singleItem": true, "autoPlay": 4000, "navigation": false, "pagination": true, "transitionStyle":"goDown"}'>
-											<div>
-												<img class="img-fluid" src="https://www.laboratoireterritorial.fr/wp-content/uploads/2016/11/industrial-1765362_1920.jpg" width="800" height="553" alt="">
-											</div>
-											<div>
-												<img class="img-fluid" src="https://www.urbanpresents.net/wp-content/uploads/2016/01/graffiti-urbex-halle-guterbahnhof-nov-2015-07492.jpg" width="800" height="553" alt="">
-											</div>
-											<div>
-												<img class="img-fluid" src="https://www.tuxboard.com/photos/2015/10/Vince-J-Urbex-ecole.jpg" width="800" height="553" alt="">
-											</div>
-										</div>
-										<!-- /carousel -->
-
-									</figure>   
-
-									<div class="item-box-desc">
-										<h3 style="text-align:center;">NICE</h3>
-										<ul class="list-inline categories m-0" style="text-align:center;">
-											<li><a href="#">Expositions</a></li>
-											<li><a href="#">Street Art</a></li>
-										</ul>
-									</div>
-
-								</div>
-
-							</div><!-- /item -->
-
-
-							<div class="col-md-4 col-sm-4 mix Food Fests Concerts"><!-- item -->
-
-								<div class="item-box">
-										<div class="owl-carousel buttons-autohide controlls-over m-0" data-plugin-options='{"singleItem": true, "autoPlay": 4000, "navigation": false, "pagination": true, "transitionStyle":"goDown"}'>
-											<div>
-												<img class="img-fluid" src="https://www.tuxboard.com/photos/2015/10/Vince-J-Urbex-ecole.jpg" width="800" height="553" alt="">
-											</div>
-											<div>
-												<img class="img-fluid" src="https://i1.wp.com/portdattache.bzh/wp-content/uploads/2017/04/grand-hall-urbex.jpg?ssl=1" width="800" height="553" alt="">
-											</div>
-											<div>
-												<img class="img-fluid" src="https://www.laboratoireterritorial.fr/wp-content/uploads/2016/11/industrial-1765362_1920.jpg" width="800" height="553" alt="">
-											</div>
-										</div>
-
-									<div class="item-box-desc">
-										<h3 style="text-align:center;">LYON</h3>
-										<ul class="list-inline categories m-0" style="text-align:center;">
-											<li><a href="#">Food Fests</a></li>
-											<li><a href="#">Concerts</a></li>
-										</ul>
-									</div>
-
-								</div>
-
-							</div><!-- /item -->
-
-
-							<div class="col-md-4 col-sm-4 mix Hackatons Street Art"><!-- item -->
-
-								<div class="item-box">
-										<div class="owl-carousel buttons-autohide controlls-over m-0" data-plugin-options='{"singleItem": true, "autoPlay": 4000, "navigation": false, "pagination": true, "transitionStyle":"goDown"}'>
-											<div>
-												<img class="img-fluid" src="https://parallaxpictures.fr/wp-content/uploads/2016/10/Drone-Urbex-Vichy.jpg" width="800" height="553" alt="">
-											</div>
-											<div>
-												<img class="img-fluid" src="https://www.laboratoireterritorial.fr/wp-content/uploads/2016/11/industrial-1765362_1920.jpg" width="800" height="553" alt="">
-											</div>
-											<div>
-												<img class="img-fluid" src="http://www.voyageurs-du-net.com/wp-content/uploads/2014/09/exploration-urbaine-dark-tourism-darmon-richter-house-monument-of-the-bulgarian-communist-party.jpg" width="800" height="553" alt="">
-											</div>
-										</div>
-
-									<div class="item-box-desc">
-										<h3 style="text-align:center;">BORDEAUX</h3>
-										<ul class="list-inline categories m-0" style="text-align:center;">
-											<li><a href="#">Hackatons</a></li>
-											<li><a href="#">Street Art</a></li>
-										</ul>
-									</div>
-
-								</div>
-
-							</div><!-- /item -->
-
-						</div>
+					</div>
 				</div>
 			</section>
 
@@ -608,18 +437,6 @@
 							</div>
 							
 							<p>Fabulas definitiones ei pri per recteque hendrerit scriptorem in errem scribentur mel fastidii propriae philosophia cu mea. Utinam ipsum everti necessitatibus at fuisset splendide.</p>
-							
-							<a href="#">
-								Read
-								<!-- /word rotator -->
-								<span class="word-rotator" data-delay="2000">
-									<span class="items">
-										<span>more</span>
-										<span>now</span>
-									</span>
-								</span><!-- /word rotator -->
-								<i class="glyphicon glyphicon-menu-right fs-12"></i>
-							</a>
 
 						</div>
 
@@ -629,18 +446,6 @@
 							</div>
 							<p>Fabulas definitiones ei pri per recteque hendrerit scriptorem in errem scribentur mel fastidii propriae philosophia cu mea. Utinam ipsum everti necessitatibus at fuisset splendide.</p>
 
-							<a href="#">
-								Read
-								<!-- /word rotator -->
-								<span class="word-rotator" data-delay="2000">
-									<span class="items">
-										<span>more</span>
-										<span>now</span>
-									</span>
-								</span><!-- /word rotator -->
-								<i class="glyphicon glyphicon-menu-right fs-12"></i>
-							</a>
-
 						</div>
 
 						<div class="col-md-4">
@@ -648,18 +453,6 @@
 								<h3>Simplicity</h3>
 							</div>
 							<p>Fabulas definitiones ei pri per recteque hendrerit scriptorem in errem scribentur mel fastidii propriae philosophia cu mea. Utinam ipsum everti necessitatibus at fuisset splendide.</p>
-
-							<a href="#">
-								Read
-								<!-- /word rotator -->
-								<span class="word-rotator" data-delay="2000">
-									<span class="items">
-										<span>more</span>
-										<span>now</span>
-									</span>
-								</span><!-- /word rotator -->
-								<i class="glyphicon glyphicon-menu-right fs-12"></i>
-							</a>
 
 						</div>
 
