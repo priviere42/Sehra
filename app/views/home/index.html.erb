@@ -73,9 +73,11 @@
 								data-endelementdelay="0.1"
 								data-endspeed="1000"
 								data-endeasing="Power4.easeIn" style="z-index: 10;">
-								<a href="#purchase" class="btn btn-default btn-lg">
-									<span>Proposer un projet</span> 
-								</a>
+									<%if user_signed_in? %>
+											<%= link_to "PROPOSER UN PROJET", new_event_path, class: "btn btn-default btn-lg"%>
+										<%else%>
+											<%= link_to "PROPOSER UN PROJET", new_user_session_path, class: "btn btn-default btn-lg"%>
+										<%end%>
 							</div>
 
 						</li>
@@ -236,9 +238,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="1000"
 								data-endeasing="Power4.easeIn" style="z-index: 3;">
-								<a href="#purchase" class="btn btn-default btn-lg">
-									<span>Voir les projets</span> 
-								</a>
+								<%= link_to "VOIR LES PROJETS", events_path, class: "btn btn-default btn-lg" %>
 							</div>
 
 						</li>
