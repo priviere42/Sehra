@@ -50,7 +50,7 @@
                       
                       <!-- Inform Tip -->                                        
                       <div class="form-tip pt-20">
-                        <a class="no-text-decoration fs-13 mt-10 block" href="#">Mot de passe oublié?</a>
+                        <%= link_to "Mot de passe oublié?", new_password_path(resource_name) %>
                       </div>
                       
                     </div>
@@ -71,7 +71,7 @@
               </div>
               
               <div class="mt-30 text-center">
-                <a href="page-register-1.html"><strong>Créer un compte</strong></a>
+                <%= link_to "Créer un compte", new_registration_path(resource_name) %>
 
               </div>
 
@@ -105,4 +105,4 @@
 <% end %>
 -->
 
-<%= render "devise/shared/links" %>
+
