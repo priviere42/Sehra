@@ -168,7 +168,7 @@
 
 								<div class="tp-dottedoverlay twoxtwo"><!-- dotted overlay --></div>
 
-								<video class="" preload="none" width="100%" height="100%" poster="demo_files/images/video/back.jpg">
+								<video class="" preload="none" width="100%" height="100%" poster="">
 									<source src="http://podsync.net/download/h4zsQOwYt/xqcHGZWNxPQ.mp4" type="video/webm" />
 									<source src="http://podsync.net/download/h4zsQOwYt/xqcHGZWNxPQ.mp4" type="video/mp4" />
 								</video>
@@ -513,31 +513,3 @@
 		<!-- SCRIPTS -->
 		
 		<%= javascript_include_tag 'js/scripts' %>
-
-
-<!--
-
-
-<% @cities.each do |city| %>
-
-    <%= link_to city_path(id: city) do %>
-        <%= city.name %>
-        <br>
-    <% end %>
-            Events: 
-            <br>
-            <% city.place.events.where(:active=>true).each do |event| %>
-                <%= link_to event_path(id: event) do %>
-
-                    <% if event.picture1.attached? %> 
-                        <%= image_tag(event.picture1, size: "50") %> 
-                    <% else %>
-                        <%= image_tag(event.image1, size: "50") %>
-                    <% end %>
-
-                <% end %>
-            <% end %>
-        <br><br><br>
-
-<% end %>
--->
