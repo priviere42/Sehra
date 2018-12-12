@@ -1,6 +1,8 @@
 
 			<!-- REVOLUTION SLIDER -->
+
 			<section id="slider" class="slider fullwidthbanner-container roundedcorners">
+				<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 
 				<div class="fullscreenbanner" data-navigationStyle="">
 					<ul class="hide">
@@ -73,9 +75,11 @@
 								data-endelementdelay="0.1"
 								data-endspeed="1000"
 								data-endeasing="Power4.easeIn" style="z-index: 10;">
-								<a href="#purchase" class="btn btn-default btn-lg">
-									<span>Proposer un projet</span> 
-								</a>
+									<%if user_signed_in? %>
+											<%= link_to "PROPOSER UN PROJET", new_event_path, class: "btn btn-default btn-lg"%>
+										<%else%>
+											<%= link_to "PROPOSER UN PROJET", new_user_session_path, class: "btn btn-default btn-lg"%>
+										<%end%>
 							</div>
 
 						</li>
@@ -168,7 +172,7 @@
 
 								<div class="tp-dottedoverlay twoxtwo"><!-- dotted overlay --></div>
 
-								<video class="" preload="none" width="100%" height="100%" poster="demo_files/images/video/back.jpg">
+								<video class="" preload="none" width="100%" height="100%" poster="">
 									<source src="http://podsync.net/download/h4zsQOwYt/xqcHGZWNxPQ.mp4" type="video/webm" />
 									<source src="http://podsync.net/download/h4zsQOwYt/xqcHGZWNxPQ.mp4" type="video/mp4" />
 								</video>
@@ -236,9 +240,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="1000"
 								data-endeasing="Power4.easeIn" style="z-index: 3;">
-								<a href="#purchase" class="btn btn-default btn-lg">
-									<span>Voir les projets</span> 
-								</a>
+								<%= link_to "VOIR LES PROJETS", events_path, class: "btn btn-default btn-lg" %>
 							</div>
 
 						</li>

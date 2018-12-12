@@ -12,16 +12,11 @@
 							<%= image_tag("logo2.png") %>
 						</a>
 
-						<!-- 
-							Top Nav 
-							
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
+						<!-- Top Nav -->
 						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
 							<nav class="nav-main">
 								<ul id="topMain" class="nav nav-pills nav-main">
-									<li class="dropdown"><!-- HOME -->
+									<li><!-- HOME -->
 										<%= link_to "HOME", root_path %>
 									</li>
 									<li class="dropdown"><!-- PAGES -->
@@ -56,11 +51,14 @@
 											<b>COMPTE</b>
 										</a>
                                         <ul class="dropdown-menu">
+                                        	<li class="dropdown">
+                                        		<h4>Logged-in as: <%= current_user.first_name.capitalize  %></h4>
+                                        	</li>
 											<li class="dropdown">
-												<%= link_to "Edit Account", edit_user_registration_path %>
+												<%= link_to "Modifier mon compte", edit_user_registration_path %>
 											</li>
                                             <li class="dropdown">
-                                            	<%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "dropdown-toggle" %>
+                                            	<%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
 											</li>
                                             <li class="dropdown">
 												
@@ -74,10 +72,10 @@
 										</a>
                                         <ul class="dropdown-menu">
 											<li class="dropdown">
-												<%= link_to "LOG IN", new_user_session_path, class: "dropdown-toggle" %>
+												<%= link_to "Se connecter", new_user_session_path, class: "dropdown-toggle" %>
 											</li>
                                             <li class="dropdown">
-                                            	<%= link_to "CREATE ACCOUNT", new_user_registration_path, class: "dropdown-toggle" %>
+                                            	<%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-toggle" %>
 											</li>
                                             <li class="dropdown">
 												
