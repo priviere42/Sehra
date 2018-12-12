@@ -8,7 +8,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
     <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
     
@@ -29,24 +29,34 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/images/_smarty/icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    
+
+       <%= render "layouts/navbar" %>
+
   </head>
 
   <body>
-
-<%= render "layouts/navbar" %>
-
+  
     <% if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
     <% end %>
 
 
-    <%= yield %>
-     
+    <%= yield %>      
+
+  <!-- SCROLL TO TOP -->
+      <a href="#" id="toTop"></a>
+
+  <!-- JAVASCRIPT FILES -->
+  <script>var plugin_path = 'assets/plugins/';</script>
+
+  <!-- SCRIPTS -->
+  <%= javascript_include_tag 'js/scripts' %>
 
   </body>
 
   <footer>
+
   <%= render "layouts/footer" %>
+
   </footer>
 </html>

@@ -16,7 +16,8 @@
 //= require plugins/slider.revolution/js/jquery.themepunch.revolution.min
 //= require plugins/owl-carousel/owl.carousel.min
 //= require activestorage
-//= require turbolinks
 //= require js/scripts
 //= require js/view/demo.revolution_slider
 //= require_tree .
+
+

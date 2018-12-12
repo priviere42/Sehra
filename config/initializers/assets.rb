@@ -21,3 +21,4 @@ Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/j
 Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.revolution.min )
 Rails.application.config.assets.precompile += %w( js/view/demo.revolution_slider )
 Rails.application.config.assets.precompile += %w( plugins/owl-carousel/owl.carousel.min )
+Rails.application.config.assets.precompile += %w( plugins/isotope/isotope.pkgd.min.js )

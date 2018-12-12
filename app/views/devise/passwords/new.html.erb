@@ -1,5 +1,68 @@
-<h2>Forgot your password?</h2>
+			<!-- -->
+			<section>
+				<div class="container">
+					
+					<div class="row">
 
+						<div class="col-md-6 offset-md-3">
+
+							<!-- ALERT
+							<div class="alert alert-mini alert-danger mb-30">
+								<strong>Oh snap!</strong> Login Incorrect!
+							</div>ALERT -->
+
+							<div class="box-static box-border-top p-30">
+								<div class="box-title mb-30">
+									<h2 class="fs-20">Tu as oublié ton mot de passe ?</h2>
+								</div>
+
+								<form class="m-0" method="post" action="#" autocomplete="off">
+							<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  							<%= devise_error_messages! %>
+									<div class="clearfix">
+										
+										<!-- Email -->
+										<div class="form-group">
+											<%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+										</div>
+											
+									</div>
+									
+									<div class="row">
+										
+										<div class="col-md-6 col-sm-6 col-6">
+											
+											<!-- Inform Tip -->     
+											
+										</div>
+										
+										<div class="col-md-6 col-sm-6 col-6 text-right">
+  										<div class="actions">
+   											 <%= f.submit "Reset" %>
+  										</div>
+										<% end %>
+											
+
+										</div>
+										
+									</div>
+									
+								</form>
+
+							</div>
+							
+							<div class="mt-30 text-center">
+								<a href="page-register-1.html"><strong>Créer un compte</strong></a>
+
+							</div>
+
+						</div>
+					</div>
+					
+				</div>
+			</section>
+			<!-- / -->
+<!--
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
@@ -12,5 +75,5 @@
     <%= f.submit "Send me reset password instructions" %>
   </div>
 <% end %>
-
+-->
 <%= render "devise/shared/links" %>

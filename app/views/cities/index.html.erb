@@ -1,51 +1,26 @@
-<div id="portfolio" class="clearfix fullwidth portfolio-nogutter portfolio-isotope portfolio-isotope-3">
-    <% @cities.each do |city| %>
-    <div class="portfolio-item"><!-- item -->
-        <div class="item-box">
-            <figure>
-                <span class="item-hover">
-                    <span class="overlay dark-5"></span>
-                    <span class="inner">
-                        <!-- lightbox -->
-                        <a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/20-min.jpg" data-plugin-options='{"type":"image"}'>
-                            <span class="fa fa-eye fs-20"></span>
-                                <%= link_to "#{city.name}", city_path(id: city) %>
-                        </a>
-                    </span>
-                </span>
-                <%= image_tag(city.image_url, size:"800", class:"img-fluid") %>
-            </figure>
-        </div>
-    </div><!-- /item -->
-
-<% end %>
-</div>
-
-    <!-- SCROLL TO TOP -->
-<a href="#" id="toTop"></a>
-
-
-<!-- PRELOADER -->
-<div id="preloader">
-    <div class="inner">
-        <span class="loader"></span>
+<section>
+    <div id="portfolio" class="clearfix fullwidth portfolio-nogutter portfolio-isotope portfolio-isotope-3">
+        <% @cities.each do |city| %>
+            <div class="portfolio-item"><!-- item -->
+                <div class="item-box">
+                    <figure>
+                        <span class="item-hover">
+                            <span class="overlay dark-5"></span>
+                            <span class="inner">
+                                <!-- lightbox -->
+                                <a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/20-min.jpg" data-plugin-options='{"type":"image"}'>
+                                    <span class="fa fa-eye fs-20"></span>
+                                        <%= link_to "#{city.name}", city_path(id: city) %>
+                                </a>
+                            </span>
+                        </span>
+                        <%= image_tag(city.image_url, size:"800", class:"img-fluid") %>
+                    </figure>
+                </div>
+            </div><!-- /item -->
+        <% end %>
     </div>
-</div><!-- /PRELOADER -->
 
+<%= javascript_include_tag "plugins/isotope/isotope.pkgd.min" %>
 
-<!-- JAVASCRIPT FILES -->
-<script>var plugin_path = 'assets/plugins/';</script>
-
-
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> 
-
-<!-- REVOLUTION SLIDER -->
-<%= javascript_include_tag 'plugins/jquery/jquery-3.3.1.min' %>
-<%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.tools.min' %>
-<%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.revolution.min' %>
-<%= javascript_include_tag 'js/view/demo.revolution_slider' %>
-
-<!-- SCRIPTS -->
-
-<%= javascript_include_tag 'js/scripts' %>
+</section>

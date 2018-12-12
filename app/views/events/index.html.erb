@@ -1,19 +1,36 @@
-<% @events.order(:votes_count).reverse_order.each do |event| %>
-    <%= link_to event_path(id: event) do %>
+<section>
 
-        <% if event.picture1.attached? %> 
-            <%= image_tag(event.picture1, size: "100") %> 
-        <% else %>
-            <%= image_tag(event.image1, size: "100")%>
+    <div id="portfolio" class="clearfix fullwidth portfolio-nogutter portfolio-isotope portfolio-isotope-3">
+        <% @events.order(:votes_count).reverse_order.each do |event| %>    
+            <div class="portfolio-item"><!-- item -->
+                <div class="item-box">
+                    <figure>
+                        <%= link_to event_path(id: event) do %>
+
+                        <span class="item-hover">
+                            <span class="overlay dark-5"></span>
+                            <span class="inner">
+                                <!-- lightbox -->
+                                <%= event.name %>
+                                <a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/20-min.jpg" data-plugin-options='{"type":"image"}'>
+                                        Votes:    <%= event.votes_count %>
+
+                                </a>
+                            </span>
+                        </span>
+                            <% if event.picture1.attached? %> 
+                                <%= image_tag(event.picture1, size: "450", class: "img-fluid") %> 
+                            <% else %>
+                                <%= image_tag(event.image1, size: "450", class: "img-fluid")%>
+                            <% end %>            
+                    </figure>
+                    <br>
+                    <%end %>
+                </div>
+            </div><!-- /item -->
         <% end %>
+    </div>
 
-        Votes: 
-        <%= event.votes_count %>
-    <% end %>
+<%= javascript_include_tag "plugins/isotope/isotope.pkgd.min" %>
 
-<% end %>
-
-<br>
-<% if user_signed_in? %>
-    <%= link_to "Proposer un projet", new_event_path %>
-<% end %>
+</section>
