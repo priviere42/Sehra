@@ -37,15 +37,27 @@
                             <div class="box-light mt-20"><!-- .box-light OR .box-dark -->
                                 <div class="box-inner">
                                         <% if user_signed_in? %>
-                                        <%= div_for @event do %>
-                                            <%= render partial: "votes/button", locals: { event: @event } %>
-                                                                                                        <div class="text-muted text-right mt-3 fs-12 mb-10">
+
+                                             <%= div_for @event do %>
+                                                <%= render partial: "votes/button", locals: { event: @event } %>
+                                                <div class="text-muted text-right mt-3 fs-12 mb-10">
                                                     <span>Vous ne pouvez voter qu'une fois.</span>
                                                 </div>
+                                                <div class="mb-30">
+
+                                                    <% end %>
+                                                <% else %>
+                                              <%= div_for @event do %>
+                                                <%= render partial: "votes/button", locals: { event: @event } %>
+                                                <div class="text-muted text-right mt-3 fs-12 mb-10">
+                                                    <span>Vous ne pouvez voter qu'une fois.</span>
+                                                </div>
+                                                <div class="mb-30">
+                                                
+                                                    <% end %>                                               
+
                                         <% end %>
-                                            <div class="mb-30">
-                                            <%= render partial: "votes/count" %>
-                                            <% end %>
+
                                             </div>
                                         </div>
                                     </div>
