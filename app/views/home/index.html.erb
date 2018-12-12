@@ -1,6 +1,8 @@
 
 			<!-- REVOLUTION SLIDER -->
+
 			<section id="slider" class="slider fullwidthbanner-container roundedcorners">
+				<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 
 				<div class="fullscreenbanner" data-navigationStyle="">
 					<ul class="hide">
@@ -73,9 +75,11 @@
 								data-endelementdelay="0.1"
 								data-endspeed="1000"
 								data-endeasing="Power4.easeIn" style="z-index: 10;">
-								<a href="#purchase" class="btn btn-default btn-lg">
-									<span>Proposer un projet</span> 
-								</a>
+									<%if user_signed_in? %>
+											<%= link_to "PROPOSER UN PROJET", new_event_path, class: "btn btn-default btn-lg"%>
+										<%else%>
+											<%= link_to "PROPOSER UN PROJET", new_user_session_path, class: "btn btn-default btn-lg"%>
+										<%end%>
 							</div>
 
 						</li>
@@ -168,7 +172,7 @@
 
 								<div class="tp-dottedoverlay twoxtwo"><!-- dotted overlay --></div>
 
-								<video class="" preload="none" width="100%" height="100%" poster="demo_files/images/video/back.jpg">
+								<video class="" preload="none" width="100%" height="100%" poster="">
 									<source src="http://podsync.net/download/h4zsQOwYt/xqcHGZWNxPQ.mp4" type="video/webm" />
 									<source src="http://podsync.net/download/h4zsQOwYt/xqcHGZWNxPQ.mp4" type="video/mp4" />
 								</video>
@@ -236,9 +240,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="1000"
 								data-endeasing="Power4.easeIn" style="z-index: 3;">
-								<a href="#purchase" class="btn btn-default btn-lg">
-									<span>Voir les projets</span> 
-								</a>
+								<%= link_to "VOIR LES PROJETS", events_path, class: "btn btn-default btn-lg" %>
 							</div>
 
 						</li>
@@ -368,11 +370,16 @@
 						<% @cities.each do |city| %>
 						
 							<div class="col-md-4 col-sm-4 mix Expositions Concerts Hackatons"><!-- item -->
-
-								<div class="item-box">
+									<div class="item-box-desc">
+										<h3 style="text-align:center;">Quelques projets à <%= city.name %></h3>
+										<ul class="list-inline categories m-0" style="text-align:center;">
+											<li><a><%= city.description %></a></li>
+										</ul>
+									</div>   
+							<div class="item-box">
+								
 									<figure>
 										<span class="item-hover">
-											<span class="overlay dark-5"></span>
 										</span>
 
 										<!-- carousel -->
@@ -404,14 +411,7 @@
 										<!-- /carousel -->
 
 									</figure>
-
-									<div class="item-box-desc">
-										<h3 style="text-align:center;"><%= city.name %></h3>
-										<ul class="list-inline categories m-0" style="text-align:center;">
-											<li><a><%= city.description %></a></li>
-										</ul>
-									</div>
-
+ 
 								</div>
 
 							</div><!-- /item -->
@@ -419,111 +419,69 @@
 						<% end %>
                             
 					</div>
-				</div>
-			</section>
-
-
-
-
-			<!-- -->
-			<section>
-				<div class="container">
-					<div class="row">
 					
-						<div class="col-md-4">
-							
-							<div class="heading-title heading-border-bottom heading-color">
-								<h3>Passion</h3>
-							</div>
-							
-							<p>Fabulas definitiones ei pri per recteque hendrerit scriptorem in errem scribentur mel fastidii propriae philosophia cu mea. Utinam ipsum everti necessitatibus at fuisset splendide.</p>
+				</div>
+			</section>
+			<!-- COLOR BOXES -->
+			<section class="p-0 b-0">
+				<!--
+					.box-pink
+					.box-blue
+					.box-orange
+					.box-yellow
+					.box-purple
+					.box-red
+					.box-brown
+					.box-green
+					.box-black
+					.box-gray
+					.box-teal
 
-						</div>
 
-						<div class="col-md-4">
-							<div class="heading-title heading-border-bottom heading-color">
-								<h3>Precision</h3>
-							</div>
-							<p>Fabulas definitiones ei pri per recteque hendrerit scriptorem in errem scribentur mel fastidii propriae philosophia cu mea. Utinam ipsum everti necessitatibus at fuisset splendide.</p>
+				 
+				CREATE YOUR OWN COLORS - CSS EXAMPLE:
+					.box-pink>div:nth-child(1) {
+						background-color:#e2476b;
+					}
+					.box-pink>div:nth-child(2) {
+						background-color:#e9738f;
+					}
+					.box-pink>div:nth-child(3) {
+						background-color:#f09fb2;
+					}
+					.box-pink>div:nth-child(4) {
+						background-color:#f7cbd5;
+					}
 
-						</div>
+				-->
+				<div class="row box-gradient box-gray">
 
-						<div class="col-md-4">
-							<div class="heading-title heading-border-bottom heading-color">
-								<h3>Simplicity</h3>
-							</div>
-							<p>Fabulas definitiones ei pri per recteque hendrerit scriptorem in errem scribentur mel fastidii propriae philosophia cu mea. Utinam ipsum everti necessitatibus at fuisset splendide.</p>
-
-						</div>
-
+					<div class="col-6 col-sm-3">
+						<p>Villes</p>
+						<h2 class="countTo font-raleway" data-speed="500"><%= City.count %></h2>
 					</div>
-					<div class="divider double-line mt-80 mb-80"><!-- divider --></div>
+				
+					<div class="col-6 col-sm-3">
+						<p>Projets</p>						
+						<h2 class="countTo font-raleway" data-speed="500"><%= Event.count %></h2>
+					</div>
+					
+					<div class="col-6 col-sm-3">
+						<p>Utilisateurs</p>
+						<h2 class="countTo font-raleway" data-speed="500"><%= User.count %></h2>
+					</div>
+					<div class="col-6 col-sm-3">
+						<p>Votes</p>
+						<h2 class="countTo font-raleway" data-speed="500"><%= Vote.count %></h2>
+					</div>
 
 				</div>
 			</section>
-			<!-- / -->
-
+			<!-- /COLOR BOXES -->
 		</div>
 		<!-- /wrapper -->
-
-
-		<!-- SCROLL TO TOP -->
-		<a href="#" id="toTop"></a>
-
-
-		<!-- PRELOADER -->
-		<div id="preloader">
-			<div class="inner">
-				<span class="loader"></span>
-			</div>
-		</div><!-- /PRELOADER -->
-
-
-		<!-- JAVASCRIPT FILES -->
-		<script>var plugin_path = 'assets/plugins/';</script>
- 	
-<!-- 
-********************* DECOMMENTER CECI SI PROBLEMES AVEC LE JQUERY *********************************
-
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> 
-
-**************************************************************************************************** 
- -->
-		<!-- REVOLUTION SLIDER -->
-		<%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.tools.min' %>
-		<%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.revolution.min' %>
-		<%= javascript_include_tag 'js/view/demo.revolution_slider' %>
-
-		<!-- SCRIPTS -->
-		
-		<%= javascript_include_tag 'js/scripts' %>
-	</body>
-</html>
-
-<!--
-
-
-<% @cities.each do |city| %>
-
-    <%= link_to city_path(id: city) do %>
-        <%= city.name %>
-        <br>
-    <% end %>
-            Events: 
-            <br>
-            <% city.place.events.where(:active=>true).each do |event| %>
-                <%= link_to event_path(id: event) do %>
-
-                    <% if event.picture1.attached? %> 
-                        <%= image_tag(event.picture1, size: "50") %> 
-                    <% else %>
-                        <%= image_tag(event.image1, size: "50") %>
-                    <% end %>
-
-                <% end %>
-            <% end %>
-        <br><br><br>
-
-<% end %>
--->
+  
+      <!-- REVOLUTION SLIDER -->
+      <%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.tools.min' %>
+      <%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.revolution.min' %>
+      <%= javascript_include_tag 'js/view/demo.revolution_slider' %>

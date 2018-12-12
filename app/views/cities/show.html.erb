@@ -1,46 +1,112 @@
-    <%= @city.name %>
-    <br>
-    <%= @city.description %>
-    <br>
-    <%= image_tag(@city.image_url, size: "300") %>
+<div>
+<section>
+                <div class="container">
+                    
+                    <h1><%= @city.name %></h1>
+                    
+                    <div class="divider divider-center divider-color"><!-- divider -->
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+
+                    <!-- BORN TO BE A WINNER -->
+                    <article class="row">
+                        <div class="col-md-6">
+
+                            <%= image_tag(@city.place.image_url, size: "500") %>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <h5><%= @city.description %></h5>
+                            <br>
+                            <div class="divider divider-center divider-color"></div>
+                                <p>Lieu: <h5><%= @city.place.name %></h5><br>
+                                    <%=@city.place.address%></p>
+                            <br>
+                        </div>
+                    </article>
+                    <!-- /BORN TO BE A WINNER -->
+                </div>
+</section>
+            <!-- / -->
 
 
-        Place:
 
-        <%= @city.place.name %>
-        <%= image_tag(@city.place.image_url, size: "200") %>
-            Events: 
+            <!-- -->
+<section>
+    <div class="container">
+                            <h4><b><u>PROJETS EN COURS DE VOTE </u></b></h4>
+
+                            <div class="divider divider-center divider-black"><!-- divider -->
+                                <i class="fa fa-chevron-down"></i>
+                            </div>
+        <div class="row">
             <% @city.place.events.each do |event| %>
-                <%= link_to event_path(id: event) do %>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <%= link_to event_path(id: event) do %>
+                            <% if event.picture1.attached? %> 
+                                <%= image_tag(event.picture1, size: "300") %> <br>
+                                <p class="noir-ecriture"><%= event.name%></p>
+                            <% else %>
+                                <%= image_tag(event.image1, size: "300") %><br>
+                                <p class="noir-ecriture"><%= event.name%></p>
+                                <br/>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>
+             <% end %>
+        </div>
+    </div>
 
-                    <% if event.picture1.attached? %> 
-                        <%= image_tag(event.picture1, size: "50") %> 
+
+</section>
+
+
+
+<section>
+            
+                    <% if user_signed_in? %>
+                        <h5>Localisation de "<%= @city.place.name %>" à <%= @city.name %>: </h5><br>
+
+                            <div id="map"></div>
+
+                            <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.googlejs_api %>&callback=initMap"></script>
+
+                            <script>
+                        function initMap() {
+                        // Localisation test pour paris
+                        var paris = {lat: <%= @city.place.latitude %> , lng: <%= @city.place.longitude %> };
+                        // la map est centrée sur paris
+                        var map = new google.maps.Map(
+                            document.getElementById('map'), {zoom: 15, center: paris});
+                        // le marker est positionné sur paris
+                        var marker = new google.maps.Marker({position: paris, map: map});
+                        }
+                            </script>
                     <% else %>
-                        <%= image_tag(event.image1, size: "50") %>
+                        <br><br>
+                        <h5>Please Login to see localisation of the place.</h5>
                     <% end %>
 
-                <% end %>
-            <% end %>
+</section>
 
-<% if user_signed_in? %>
-    <p>Localisation "<%= @city.place.name %>" in <%= @city.name %>: </p>
+        <a href="#" id="toTop"></a>
 
-        <div id="map"></div>
 
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.googlejs_api %>&callback=initMap"></script>
+        <!-- PRELOADER -->
+       <!-- /PRELOADER -->
 
-        <script>
-    function initMap() {
-    // Localisation test pour paris
-    var paris = {lat: <%= @city.place.latitude %> , lng: <%= @city.place.longitude %> };
-    // la map est centrée sur paris
-    var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 15, center: paris});
-    // le marker est positionné sur paris
-    var marker = new google.maps.Marker({position: paris, map: map});
-    }
-        </script>
-<% else %>
-    <br><br>
-    Please Login to see localisation of the place.
-<% end %>
+
+        <!-- JAVASCRIPT FILES -->
+        <script>var plugin_path = 'assets/plugins/';</script>
+        <!--<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+
+        <script src="assets/js/scripts.js"></script>
+        
+       -->
+       <%= javascript_include_tag 'js/scripts' %>
+
+</div>
+
+

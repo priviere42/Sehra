@@ -1,0 +1,96 @@
+<body class="smoothscroll enable-animation">
+
+            <div id="header" class="navbar-toggleable-md sticky clearfix">
+
+                <!-- TOP NAV -->
+                <header id="topNav">
+					<div class="container">
+						<!-- /BUTTONS -->
+
+						<!-- Logo -->
+						<a class="logo float-left" href="/">
+							<%= image_tag("logo2.png") %>
+						</a>
+
+						<!-- Top Nav -->
+						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+							<nav class="nav-main">
+								<ul id="topMain" class="nav nav-pills nav-main">
+									<li><!-- HOME -->
+										<%= link_to "HOME", root_path %>
+									</li>
+									<li class="dropdown"><!-- PAGES -->
+										<%= link_to "VILLES", cities_path, class: "dropdown-toggle" %>
+										<ul class="dropdown-menu">
+											<% City.all.each do |city| %>
+											<li>
+												<%= link_to city_path(id: city) do %>
+        										<%= city.name %>
+        										<% end %>
+											</li>
+											<% end %>
+										</ul>
+										
+									</li>
+									<li class="dropdown"><!-- FEATURES -->
+										<%= link_to "PROJETS", events_path, class: "dropdown-toggle noicon" %>				
+									</li>
+									<li class="dropdown">
+										<% if user_signed_in? && current_user.admin?  %>
+											<%= link_to "ADMIN DASHBOARD", rails_admin_path, class: "dropdown-toggle noicon" %>
+										<%elsif user_signed_in? %>
+											<%= link_to "PROPOSER UN PROJET", new_event_path, class: "dropdown-toggle noicon"%>
+										<%else%>
+											<%= link_to "PROPOSER UN PROJET", new_user_session_path, class: "dropdown-toggle noicon"%>
+										<%end%>
+									</li>
+								<% if user_signed_in?  %>
+									<li class="dropdown nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn"><!-- THEMATIC -->
+										<a class="dropdown-toggle" href="#">
+											<span class="badge badge-danger float-right fs-11">Connecté</span>
+											<b>COMPTE</b>
+										</a>
+                                        <ul class="dropdown-menu">
+                                        	<li class="dropdown">
+                                        		<h4>Logged-in as: <%= current_user.first_name.capitalize  %></h4>
+                                        	</li>
+											<li class="dropdown">
+												<%= link_to "Modifier mon compte", edit_user_registration_path %>
+											</li>
+                                            <li class="dropdown">
+                                            	<%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
+											</li>
+                                            <li class="dropdown">
+												
+											</li>
+										</ul>
+									</li>
+								<% else %>
+									<li class="dropdown nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn"><!-- THEMATIC -->
+										<a class="dropdown-toggle" href="#">
+											<b>COMPTE</b>
+										</a>
+                                        <ul class="dropdown-menu">
+											<li class="dropdown">
+												<%= link_to "Se connecter", new_user_session_path, class: "dropdown-toggle" %>
+											</li>
+                                            <li class="dropdown">
+                                            	<%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-toggle" %>
+											</li>
+                                            <li class="dropdown">
+												
+											</li>
+										</ul>
+									</li>
+								<%end%>
+
+								</ul>
+
+							</nav>
+						</div>
+
+					</div>
+				</header>
+			</div>
+
+</body>

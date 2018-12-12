@@ -1,64 +1,218 @@
-<%= @event.name %>
-<br>
-<%= @event.description %>
-<br>
 
-        <% if @event.picture1.attached? %> 
-            <%= image_tag(@event.picture1, size: "300") %> 
-        <% else %>
-            <%= image_tag(@event.image1, size: "300") %>
-        <% end %>
+<section class="page-header page-header-xs">
+    <div class="container">
 
-        <% if @event.picture2.attached? %>
-            <%= image_tag(@event.picture2, size: "300") %> 
-        <% else %>
-            <% if @event.image2? %>
-                <%= image_tag(@event.image2, size: "300") %>
-            <% end %>
-        <% end %>
+        <!-- breadcrumbs -->
+        <ol class="breadcrumb breadcrumb-inverse">
+            <li><a href="/events">Projets</a></li>
+            <li class="active"><%= link_to "#{@event.name}", event_path(id: @event) %></li>
+        </ol><!-- /breadcrumbs -->
 
-        <% if @event.picture3.attached? %>
-            <%= image_tag(@event.picture3, size: "300") %> 
-        <% else %>
-            <% if @event.image3? %>
-                <%= image_tag(@event.image2, size: "300") %>
-            <% end %>
-        <% end %>
+    </div>
+</section>
+<!-- /PAGE HEADER -->
 
-<br>
-<%= @place_of_event.name %>
-<br>
-<%= image_tag(@place_of_event.image_url, size: "100") %>
-<br>
+<!-- -->
+    <div class="container">
+    <div class="row">
+
+            <!-- RIGHT -->
+            <div class="col-lg-9 col-md-9 col-sm-8 order-lg-1 order-md-2 order-sm-2 mb-30">
+
+                <!-- FLIP BOX -->
+                <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-0">
+                    <div class="front">
+                        <div class="box1 rad-0">
+                            <div class="box-icon-title">
+                                <i class="fa fa-history"></i>
+                                <h4 class="uppercase"><strong><%= @event.name %></strong></h4>
+                                <br />
+                                <h2><strong>DESCRIPTION</strong> DU PROJET</h2>
+                            </div>
+                            <section><%= @event.description %></section>
+                        </div>
+                    </div>
+
+                    <div class="back">
+                        <div class="box2 rad-0">
+                            <div class="box-light mt-20"><!-- .box-light OR .box-dark -->
+                                <div class="box-inner">
+                                        <% if user_signed_in? %>
+
+                                             <%= div_for @event do %>
+                                                <%= render partial: "votes/button", locals: { event: @event } %>
+                                                <div class="text-muted text-right mt-3 fs-12 mb-10">
+                                                    <span>Vous ne pouvez voter qu'une fois.</span>
+                                                </div>
+                                                <div class="mb-30">
+
+                                                    <% end %>
+                                                <% else %>
+                                              <%= div_for @event do %>
+                                                <%= render partial: "votes/button", locals: { event: @event } %>
+                                                <div class="text-muted text-right mt-3 fs-12 mb-10">
+                                                    <span>Vous ne pouvez voter qu'une fois.</span>
+                                                </div>
+                                                <div class="mb-30">
+                                                
+                                                    <% end %>                                               
+
+                                        <% end %>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                <!-- /FLIP BOX -->
+
+
+                <div class="box-light"><!-- .box-light OR .box-dark -->
+
+                    <div class="box-inner">
+                    
+                        <div class="timeline"><!-- .timeline-inverse = right position [left on RTL] -->
+
+                                <!-- ITEM -->
+                                <div class="timeline-item timeline-item-bordered">
+                                    <!-- timeline entry -->
+                                    <div class="timeline-entry rounded"><!-- .rounded = entry -->
+                                        <span>étape</span>1
+                                        <div class="timeline-vline"><!-- vertical line --></div>
+                                    </div>
+                                    <!-- /timeline entry -->
+
+                                    <h2 class="uppercase">EVALUATION DU PROJET</h2>
+                                    <p>Votre pouvoir est ici d'apporter une visibilité au projet de votre choix.
+                                    <br/>Nos recommandations pour évaluer le potentiel de ce dernier sont les suivantes ;
+                                    <br/>Le projet a :
+                                    <br/>+ des objectifs et activités réalistes ;
+                                    <br/>+ Prend en compte et évalue de façon adéquate les risques lié à l'activité et à l'emplacement ;
+                                    <br/>+ Propose une véritable structure de gestion du projet ;
+                                    <br/>+ Vous plaît vraiment !
+                                    </p>
+                                </div>
+                                <!-- /ITEM -->
+
+                                <!-- ITEM -->
+                                <div class="timeline-item timeline-item-bordered">
+                                    <!-- timeline entry -->
+                                    <div class="timeline-entry rounded"><!-- .rounded = entry -->
+                                        <span>étape</span>2
+                                        <div class="timeline-vline"><!-- vertical line --></div>
+                                    </div>
+                                    <!-- /timeline entry -->
+
+                                    <h2 class="uppercase">VOTE & SELECTION</h2>
+                                    <p>Le projet ayant reçu le plus de votes dans le temps imparti sera sélectionné.
+                                    <br/>Vous ne pouvez voter que pour un seul projet par localisation et par ville, mais vous pouvez voter pour des projets situés dans des villes différentes.
+                                    </p>
+                                </div>
+                                <!-- /ITEM -->
+
+                                <!-- ITEM -->
+                                <div class="timeline-item timeline-item-bordered">
+                                    <!-- timeline entry -->
+                                    <div class="timeline-entry rounded"><!-- .rounded = entry -->
+                                        <span>étape</span>3
+                                        <div class="timeline-vline"><!-- vertical line --></div>
+                                    </div>
+                                    <!-- /timeline entry -->
+
+                                    <h2 class="uppercase">MISE EN PLACE</h2>
+                                    <p>Le projet gagnant bénéficiera d'une liste de votes permettant au porteur de projet d'appuyer sa demande auprès des acteurs privés (investisseurs, promoteurs) ou publics (collectivités, municipalités, organismes).
+                                    <br/>Il bénéficiera par ailleurs d'un accompagnement et du support logistique de Sehra pour la mise en place du projet ainsi que pour son financement, en partenariat avec une plateforme de CrowdFunding.
+                                    </p>
+                                </div>
+                                <!-- /ITEM -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            
+            <!-- LEFT -->
+            <div class="col-lg-3 col-md-3 col-sm-4 order-lg-1 order-md-1 order-sm-1">
+            
+                <div class="thumbnail text-center">
+                    <%= image_tag(@place_of_event.image_url, size: "100") %>
+                    <h2 class="fs-18 mt-10 mb-0"><%= @event.name %></h2>
+                    <h3 class="fs-11 mt-0 mb-10 text-muted"><%= @place_of_event.name %></h3>
+                </div>
+
+                <!-- completed -->
+                <!-- /completed -->
+
+                <!-- SIDE NAV -->        
+                <% if @event.picture1.attached? %> 
+                    <%= image_tag(@event.picture1, size: "300") %> 
+                <% else %>
+                    <%= image_tag(@event.image1, size: "300") %>
+                <% end %>
+
+                <% if @event.picture2.attached? %>
+                    <%= image_tag(@event.picture2, size: "300") %> 
+                <% else %>
+                    <% if @event.image2? %>
+                        <%= image_tag(@event.image2, size: "300") %>
+                    <% end %>
+                <% end %>
+
+                <% if @event.picture3.attached? %>
+                    <%= image_tag(@event.picture3, size: "300") %> 
+                <% else %>
+                    <% if @event.image3? %>
+                        <%= image_tag(@event.image2, size: "300") %>
+                    <% end %>
+                <% end %>
+                <!-- /SIDE NAV -->
+            </div>
+        </div>
+    </div>
+
 <% if user_signed_in? %>
-    <%= div_for @event do %>
-        <%= render partial: "votes/button", locals: { event: @event } %>
-    <% end %>
-    <% else %>
-        Number of votes:
-        <%= render partial: "votes/count" %>
-<% end %>
-
-<% if user_signed_in? %>
-    <p>Localisation of the event: </p>
-
-        <div id="map"></div>
-
+<h4 class="uppercase"  style="text-align:center;"><strong>LOCALISATION</strong> DU PROJET</h4>
+<div id="map">
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.googlejs_api %>&callback=initMap"></script>
-
         <script>
-    function initMap() {
-    // Localisation test pour paris
-    var paris = {lat: <%= Place.find(@event.place_id).latitude %> , lng: <%= Place.find(@event.place_id).longitude %> };
-    // la map est centrée sur paris
-    var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 15, center: paris});
-    // le marker est positionné sur paris
-    var marker = new google.maps.Marker({position: paris, map: map});
-    }
+            function initMap() {
+            // Localisation test pour paris
+            var paris = {lat: <%= Place.find(@event.place_id).latitude %> , lng: <%= Place.find(@event.place_id).longitude %> };
+            // la map est centrée sur paris
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 15, center: paris});
+            // le marker est positionné sur paris
+            var marker = new google.maps.Marker({position: paris, map: map});
+            }
         </script>
-
+    </div>    
 <% else %>
-    <br><br>    
-    Please Login to see localisation of the event.
+<h4 class="uppercase"  style="text-align:center;">MERCI DE VOUS <strong>CONNECTER</strong> POUR VOIR LA <strong>LOCALISATION</strong> DU PROJET</h4>
 <% end %>
+</div>
+  
+			<!-- / -->
+
+                <!-- SCROLL TO TOP -->
+<a href="#" id="toTop"></a>
+
+<!-- JAVASCRIPT FILES -->
+<script>var plugin_path = 'assets/plugins/';</script>
+
+
+<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>  -->
+
+<!-- REVOLUTION SLIDER -->
+<%= javascript_include_tag 'plugins/jquery/jquery-3.3.1.min' %>
+<%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.tools.min' %>
+<%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.revolution.min' %>
+<%= javascript_include_tag 'js/view/demo.revolution_slider' %>
+
+<!-- SCRIPTS -->
+
+<%= javascript_include_tag 'js/scripts' %>
