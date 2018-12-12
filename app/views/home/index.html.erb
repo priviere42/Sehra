@@ -368,11 +368,16 @@
 						<% @cities.each do |city| %>
 						
 							<div class="col-md-4 col-sm-4 mix Expositions Concerts Hackatons"><!-- item -->
-
-								<div class="item-box">
+									<div class="item-box-desc">
+										<h3 style="text-align:center;">Quelques projets à <%= city.name %></h3>
+										<ul class="list-inline categories m-0" style="text-align:center;">
+											<li><a><%= city.description %></a></li>
+										</ul>
+									</div>   
+							<div class="item-box">
+								
 									<figure>
 										<span class="item-hover">
-											<span class="overlay dark-5"></span>
 										</span>
 
 										<!-- carousel -->
@@ -404,14 +409,7 @@
 										<!-- /carousel -->
 
 									</figure>
-
-									<div class="item-box-desc">
-										<h3 style="text-align:center;"><%= city.name %></h3>
-										<ul class="list-inline categories m-0" style="text-align:center;">
-											<li><a><%= city.description %></a></li>
-										</ul>
-									</div>
-
+ 
 								</div>
 
 							</div><!-- /item -->
@@ -458,31 +456,29 @@
 
 					<div class="col-6 col-sm-3">
 						<p>Villes</p>
-						<h2 class="countTo font-raleway" data-speed="3000"><%= City.count %></h2>
+						<h2 class="countTo font-raleway" data-speed="500"><%= City.count %></h2>
 					</div>
 				
 					<div class="col-6 col-sm-3">
 						<p>Projets</p>						
-						<h2 class="countTo font-raleway" data-speed="3000"><%= Event.count %></h2>
+						<h2 class="countTo font-raleway" data-speed="500"><%= Event.count %></h2>
 					</div>
-
+					
+					<div class="col-6 col-sm-3">
+						<p>Utilisateurs</p>
+						<h2 class="countTo font-raleway" data-speed="500"><%= User.count %></h2>
+					</div>
 					<div class="col-6 col-sm-3">
 						<p>Votes</p>
-						<h2 class="countTo font-raleway" data-speed="3000"><%= Vote.count %></h2>
+						<h2 class="countTo font-raleway" data-speed="500"><%= Vote.count %></h2>
 					</div>
 
-					<div class="col-6 col-sm-3">
-						<p>Puissance</p>
-						<h2 class="countTo font-raleway" data-speed="3000">9000</h2>
-					</div>
 				</div>
 			</section>
 			<!-- /COLOR BOXES -->
 		</div>
 		<!-- /wrapper -->
   
-
-
       <!-- REVOLUTION SLIDER -->
       <%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.tools.min' %>
       <%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.revolution.min' %>
