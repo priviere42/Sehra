@@ -28,11 +28,11 @@ class EventsController < ApplicationController
     )
     
     if @event_new.save && params[:new][:picture1].present?
-      flash[:notice] = "Event created successfully"
+      flash[:notice] = "Projet créé avec succès !"
       redirect_to root_path
     else 
-      flash[:notice] = "Please try again"
-  		redirect_to events_new_path
+      flash[:notice] = "Merci de réessayer"
+  		redirect_to new_event_path
   	end
 
   end
