@@ -1,0 +1,134 @@
+<body class="smoothscroll enable-animation">
+
+		<!-- SLIDE TOP -->
+		<div id="slidetop">
+		</div>
+		<!-- /SLIDE TOP -->
+
+
+		<!-- wrapper -->
+		<div id="wrapper">
+
+			<div id="header" class="navbar-toggleable-md sticky clearfix">
+
+				<!-- TOP NAV -->
+				<header id="topNav">
+					<div class="container">
+
+						<!-- Mobile Menu Button -->
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+
+						<!-- Logo -->
+						<a class="logo float-left" href="index.html">
+							<%= image_tag('logo2.png') %>
+						</a>
+
+						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+							<nav class="nav-main">
+
+								<ul id="topMain" class="nav nav-pills nav-main">
+									<li class="dropdown"><!-- HOME -->
+										<a class="dropdown-toggle noicon" href="#">
+											HOME
+										</a>
+									</li>
+									<li class="dropdown"><!-- PAGES -->
+										<a class="dropdown-toggle" href="#">
+											VILLES
+										</a>
+										<ul class="dropdown-menu">
+											<li><a href="#" data-toggle="tooltip" data-placement="top" title="Paris"><span class="badge badge-success float-right">new</span> PARIS</a></li>
+											<li><a href="#" data-toggle="tooltip" data-placement="top" title="Marseille"><span class="badge badge-success float-right">new</span> MARSEILLE</a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Toulouse"> TOULOUSE</a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Nice"> NICE</a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Lyon"> <span class="badge badge-success float-right">new</span> LYON</a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Bordeaux"> BORDEAUX</a></li>
+										</ul>
+									</li>
+									<li class="dropdown"><!-- FEATURES -->
+										<a class="dropdown-toggle" href="#">
+											PROJETS
+										</a>
+										<ul class="dropdown-menu">
+                                            <li class="dropdown">
+												<a class="dropdown-toggle" href="#">
+													<i class="et-telescope"></i> <%= link_to 'VOIR LES PROJETS', events_path %>
+												</a>
+											</li>
+                                            <li class="divider"></li>	
+                                            <% if user_signed_in? %>										
+                                            <li class="dropdown">
+												<a class="dropdown-toggle">
+													<i class="et-pencil"></i> <%= link_to 'PROPOSER UN PROJET', new_event_path %>
+												</a>
+											</li>
+											<% end %>
+											<li class="dropdown">
+												<a class="dropdown-toggle" href="#">
+													<i class="et-trophy"></i> VOTER 
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="dropdown"><!-- PRINCIPES -->
+										<a class="dropdown-toggle noicon" href="#">
+											PRINCIPES
+										</a>
+									</li>
+									<li class="dropdown"><!-- FEATURES -->
+										<a class="dropdown-toggle" href="#">
+											A PROPOS
+										</a>
+										<ul class="dropdown-menu">
+											<li class="dropdown">
+												<a class="dropdown-toggle" href="#">
+													<i class="et-genius"></i> TEAM
+												</a>
+											</li>											
+                                            <li class="dropdown">
+												<a class="dropdown-toggle" href="#">
+													<i class="et-lightbulb"></i> FAQ
+												</a>
+											</li>
+											<li class="dropdown">
+												<a class="dropdown-toggle" href="#">
+													<i class="et-envelope"></i> CONTACT 
+												</a>
+											</li>
+										</ul>
+									</li>
+                                    
+
+									<li class="dropdown nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn"><!-- THEMATIC -->
+										<a class="dropdown-toggle" href="#">
+											<span class="badge badge-danger float-right fs-11">Connecté</span>
+											<b>COMPTE</b>
+										</a>
+                                        <ul class="dropdown-menu">
+											<li class="dropdown">
+												<h4><i class="et-profile-male"></i> PROFIL</h4>    
+											</li>
+                                            <li class="dropdown">
+												<a class="dropdown-toggle" href="#">
+													<i class="et-key"></i> SIGN-IN / SIGN-OUT
+												</a>
+											</li>
+                                            <li class="dropdown">
+												<a class="dropdown-toggle" href="#">
+													<i class="et-presentation"></i> MES PROJETS
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+
+							</nav>
+						</div>
+
+					</div>
+				</header>
+				<!-- /Top Nav -->
+
+			</div>

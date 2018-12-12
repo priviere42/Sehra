@@ -66,10 +66,11 @@
 </ul>
 
 -->
-
+<%= render "shared/navbar" %>
     <% if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
     <% end %>
+
 
     <%= yield %>
      
@@ -77,6 +78,6 @@
   </body>
 
   <footer>
-  
+  <%= render "shared/footer" %>
   </footer>
 </html>
