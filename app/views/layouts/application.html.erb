@@ -29,24 +29,42 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/images/_smarty/icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    
+
+       <%= render "layouts/navbar" %>
+
   </head>
 
   <body>
-
-<%= render "layouts/navbar" %>
-
+  
     <% if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
     <% end %>
 
 
-    <%= yield %>
-     
+    <%= yield %>      
+
+  <!-- SCROLL TO TOP -->
+      <a href="#" id="toTop"></a>
+
+<!-- PRELOADER
+        <div id=“preloader”>
+            <div class=“inner”>
+                <span class=“loader”></span>
+            </div>
+        </div> 
+-->
+
+  <!-- JAVASCRIPT FILES -->
+  <script>var plugin_path = 'assets/plugins/';</script>
+
+  <!-- SCRIPTS -->
+  <%= javascript_include_tag 'js/scripts' %>
 
   </body>
 
   <footer>
+
   <%= render "layouts/footer" %>
+
   </footer>
 </html>
