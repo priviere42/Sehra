@@ -17,7 +17,7 @@ Vous devez vous connecter pour voter pour ce projet.
 <% end %>
 <label><%= @event.votes.count %> VOTES !
     <div class="progress progress-xxs center" style="width:<%= User.count*1.8 %>em; height: 5em;">
-   		<div class="progress-bar" style="width: <%= @event.votes.count*1.8 %>em; max-width: <%= User.count*1.8 %>em; height: 5em"></div>
+   		<div class="progress-bar" style="width: <%= @event.votes.count*1.8 %>em; max-width: <%= User.count*1.8 %>em; height: 5em; background-color: #99D17B"></div>
     </div>
 
     <div class="percentage"><b> <%= ((@event.votes.count)*100)/User.count %> %</b> <br> des membres ont été convaincus par ce projet.  </div>
