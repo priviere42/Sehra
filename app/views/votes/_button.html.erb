@@ -15,8 +15,12 @@ Vous devez vous connecter pour voter pour ce projet.
 
 
 <% end %>
-<label><%= @event.votes.count %> VOTES !</label>
-    <div class="progress progress-xxs">
-    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @event.votes.count %>" aria-valuemin="0" aria-valuemax="500" style="width: <%= @event.votes.count %>px; min-width: 1em;"></div>
+<label><%= @event.votes.count %> VOTES !
+    <div class="progress progress-xxs center" style="width:<%= User.count*1.8 %>em; height: 5em;">
+   		<div class="progress-bar" style="width: <%= @event.votes.count*1.8 %>em; max-width: <%= User.count*1.8 %>em; height: 5em"></div>
     </div>
+
+    <div class="percentage"><b> <%= ((@event.votes.count)*100)/User.count %> %</b> <br> des membres ont été convaincus par ce projet.  </div>
+    
 </div>
+</label>
