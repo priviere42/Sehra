@@ -478,6 +478,40 @@
 				</div>
 			</section>
 			<!-- /COLOR BOXES -->
+
+			<!-- 
+	COOKIE ALERT 
+
+		.alert-primary
+		.alert-warning
+		.alert-danger
+		.alert-info
+		.alert-position-bottom		= bottom position
+
+		.cookie-reset 			= TEST ONLY: when you want to reset the cookie (NEVER USE ON PRODUCTION)
+						  usage: add this class, refresh the page two times and then remove the class
+
+		 data-expire="30"		= expiration in days
+-->
+<div id="cookie-alert" data-expire="30" class="alert alert-primary alert-position-bottom">
+	<div class="container">
+
+		<button type="button" class="close" data-dismiss="alert">
+			<span class="cookie-close-btn" aria-hidden="true">×</span>
+			<span class="sr-only">Close</span>
+		</button>
+
+		<p class="fs-13">
+			<i class="fa fa-warning"></i> 
+
+			We use cookies to provide you with a better service. 
+			Carry on browsing if you're happy with this, or find out how to 
+			<a href="#">manage cookies</a>.
+		</p>
+
+	</div>
+</div>
+<!-- /COOKIE ALERT -->
 		</div>
 		<!-- /wrapper -->
   
