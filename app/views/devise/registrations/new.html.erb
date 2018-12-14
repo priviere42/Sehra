@@ -1,119 +1,86 @@
-      <section style="background:url('demo_files/images/wall2.jpg')">
-      
-        <div class="display-table">
-          <div class="display-table-cell vertical-align-middle">
-            
-            <div class="container">
-              
-              <div class="row">
 
-                <div class="col-12 col-sm-5 col-md-5 col-lg-4 order-md-2 order-lg-2 order-sm-2">
+<section>
 
-                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <div class="container">
 
+    <div class="row">
 
-                <div class="field">
-                 <br />
-                  <%= f.text_field :first_name, autofocus: true, placeholder: "Prénom" %></div>
+        <div class="col-sm">
 
-                <div class="field">
-                <br />
-                  <%= f.text_field :last_name, autofocus: true, placeholder: "Nom" %></div>
+          <h2 class="fs-20 text-center-xs">Pourquoi Sehra?</h2>
 
-                <div class="field">
-                  <br />
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sehra@email.com" %>
-                </div>
+          <p>Parce que votre créativité représente l'essence de votre succès.</p>
 
-                <div class="field">
-                 <br />
+          <ul class="list-unstyled login-features">
+            <li>
+              <i class="glyphicon glyphicon-road"></i> <strong>Lorem ipsum</strong> dolor sit amet.
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-cog"></i> <strong>Sed ut perspiciatis</strong> unde omnis iste.
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-tint"></i> <strong>Et harum quidem</strong> rerum facilis est et expedita distinctio. 
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-screenshot"></i> <strong>Nam libero</strong> tempore, cum soluta nobis.
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-fire"></i> <strong>Est eligendi</strong> voluptatem accusantium.
+            </li>
+          </ul>
 
-                  <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mot de passe" %>
-                </div>
+        </div>
+            <div class="col-sm">
 
-                <div class="field">
-                  <br />
-                  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation" %>
-                </div>
-<br />
-                <div class="actions">
-                  <%= f.submit "Sign up" %>
-                </div>
-              <% end %>  
+        <div class="box-static box-border-top p-30">
 
-                </div>
-
-                <div class="col-12 col-md-7 col-sm-7 col-lg-8 order-md-1 order-lg-1 order-sm-1">
-
-
-                  <h2 class="fs-20 text-center-xs">Pourquoi Sehra?</h2>
-
-                  <p>Parce que votre créativité représente l'essence de votre succès.</p>
-
-                  <ul class="list-unstyled login-features">
-                    <li>
-                      <i class="glyphicon glyphicon-road"></i> <strong>Lorem ipsum</strong> dolor sit amet.
-                    </li>
-                    <li>
-                      <i class="glyphicon glyphicon-cog"></i> <strong>Sed ut perspiciatis</strong> unde omnis iste.
-                    </li>
-                    <li>
-                      <i class="glyphicon glyphicon-tint"></i> <strong>Et harum quidem</strong> rerum facilis est et expedita distinctio. 
-                    </li>
-                    <li>
-                      <i class="glyphicon glyphicon-screenshot"></i> <strong>Nam libero</strong> tempore, cum soluta nobis.
-                    </li>
-                    <li>
-                      <i class="glyphicon glyphicon-fire"></i> <strong>Est eligendi</strong> voluptatem accusantium.
-                    </li>
-                  </ul>
-
-                </div>
-
-              </div>
-
+            <div class="box-title mb-30">
+              <h2 class="fs-20">Creation de Compte</h2>
             </div>
 
-          </div>
-        </div>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
 
-      </section>
+                  <div class="field">
+                      <%= f.text_field :first_name, autofocus: true, placeholder: "Prénom", class:"form-control form-control-lg" %>
+                  </div>
 
-<!--
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+                  <div class="field">
+                    <%= f.text_field :last_name, autofocus: true, placeholder: "Nom", class:"form-control form-control-lg" %>
+                  </div>
 
+                  <div class="field">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sehra@email.com", class:"form-control form-control-lg" %>
+                  </div>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true %></div>
+                  <div class="field">
+                    <br />
+                    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mot de passe", class:"form-control form-control-lg" %>
+                  </div>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true %></div>
+                  <div class="field">
+                    <br />
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation", class:"form-control form-control-lg" %>
+                  </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                  <div style="margin: 25px">
+                  <div style="text-align: center">
+                    <div class="actions">
+                      <%= f.submit "Valider", class: "btn btn-success btn-lg" %>
+                    </div>
+                  </div>
+                  </div>
+
+              <% end %>  
+
+            </div>
+            
+        </div>  
+
+      </div>
+
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+</section>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
--->
-<%= render "devise/shared/links" %>

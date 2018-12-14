@@ -1,16 +1,44 @@
-<body class="smoothscroll enable-animation">
-
-            <div id="header" class="navbar-toggleable-md sticky clearfix">
-
+			
+			<% if current_page?(root_url) %>
+            <div id="header" class="navbar-toggleable-md sticky transparent clearfix">
+			<% else %>
+			<div id="header" class="navbar-toggleable-md sticky clearfix">
+			<% end %>
                 <!-- TOP NAV -->
                 <header id="topNav">
 					<div class="container">
+
+					<!-- Mobile Menu Button -->
+					<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+
+					<!-- BUTTONS -->
+					<ul class="float-right nav nav-pills nav-second-main">
+						</ul>
 						<!-- /BUTTONS -->
 
 						<!-- Logo -->
+					<% if current_page?(root_url) %>
+						<a class="logo float-left" href="/">
+							<%= image_tag("logo4.png") %>
+							<%= image_tag("logo2.png") %>
+
+						</a>
+						<a class="logo float-left" href="/">
+							<%= image_tag("logo1.png") %>
+							<%= image_tag("logo3.png") %>
+						</a>
+					<% else %>
 						<a class="logo float-left" href="/">
 							<%= image_tag("logo2.png") %>
+
 						</a>
+						<a class="logo float-left" href="/">
+							<%= image_tag("logo3.png") %>
+						</a>
+
+					<% end %>
 
 						<!-- Top Nav -->
 						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
@@ -47,7 +75,7 @@
 								<% if user_signed_in?  %>
 									<li class="dropdown nav-animate-fadeIn nav-hover-animate hover-animate-bounceIn"><!-- THEMATIC -->
 										<a class="dropdown-toggle" href="#">
-											<span class="badge badge-danger float-right fs-11">Connecté</span>
+											<span class="badge badge-danger float-right fs-11" style="background-color: #1ABC9C">Connecté</span>
 											<b>COMPTE</b>
 										</a>
                                         <ul class="dropdown-menu">
@@ -90,7 +118,8 @@
 						</div>
 
 					</div>
+					
 				</header>
+
 			</div>
 
-</body>

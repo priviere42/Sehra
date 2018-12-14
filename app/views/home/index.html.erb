@@ -2,7 +2,6 @@
 			<!-- REVOLUTION SLIDER -->
 
 			<section id="slider" class="slider fullwidthbanner-container roundedcorners">
-				<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 
 				<div class="fullscreenbanner" data-navigationStyle="">
 					<ul class="hide">
@@ -89,9 +88,9 @@
 
 							<img src="assets/images/_smarty/1x1.png" data-lazyload="https://i.pinimg.com/originals/a0/1e/b5/a01eb52d88f4855203ac6ca67c254831.jpg" alt="" data-bgfit="cover" data-bgposition="center bottom" data-bgrepeat="no-repeat" />
 
-							<div class="tp-caption mediumlarge_light_white lfb tp-resizeme" 
+							<div class="tp-caption mediumlarge_light_white lfb tp-resizeme"
 								data-x="left" data-hoffset="70"
-								data-y="133" 
+								data-y="293" 
 								data-speed="1000" 
 								data-start="1400" 
 								data-easing="easeOutExpo" 
@@ -105,7 +104,7 @@
 
 							<div class="tp-caption mediumlarge_light_white lft tp-resizeme" 
 								data-x="left" data-hoffset="70"
-								data-y="85" 
+								data-y="235" 
 								data-speed="1000" 
 								data-start="1200" 
 								data-easing="easeOutExpo" 
@@ -116,10 +115,10 @@
 								data-endspeed="300">
 								<span class="fw-300 font-lato">+ Redonner vie aux immeubles, friches et entrepôts abandonnés</span>
 							</div>
-
-							<div class="tp-caption block_black sfl tp-resizeme" 
+							
+							<div class="tp-caption block_black sfl tp-resizeme"
 								data-x="70" 
-								data-y="216" 
+								data-y="376" 
 								data-speed="750" 
 								data-start="1900" 
 								data-easing="easeOutExpo" 
@@ -131,9 +130,9 @@
 								<span class="fw-300 font-lato">Artistes, Entrepreneurs, Militants : Proposez un projet à la communauté</span>
 							</div>
 
-							<div class="tp-caption block_theme_color sfr tp-resizeme" 
+							<div class="tp-caption block_theme_color sfr tp-resizeme"
 								data-x="70" 
-								data-y="260" 
+								data-y="410" 
 								data-speed="750" 
 								data-start="2200" 
 								data-easing="easeOutExpo" 
@@ -142,7 +141,7 @@
 								data-elementdelay="0.1" 
 								data-endelementdelay="0.1" 
 								data-endspeed="300">
-								<span class="fw-300 font-lato">Citoyens : Votez pour les meilleurs projets</span>
+								<span class="fw-300 font-lato">Citoyens : Votez pour les meilleurs projets.</span>
 							</div>
 
 						</li>
@@ -263,7 +262,7 @@
 								data-elementdelay="0.01"
 								data-endelementdelay="0.1"
 								data-endspeed="1000"
-								data-endeasing="Power4.easeIn" style="z-index: 3; color: #212121; font-size:20px; font-weight:300; text-shadow:none;">
+								data-endeasing="Power4.easeIn" style="z-index: 3; color: #ffffff; font-size:20px; font-weight:300; text-shadow:none;">
 								<span class="fw-300 font-lato">Développement Économique / Entrepreneuriat Social / Activisme Citoyen</span>
 							</div>
 
@@ -279,7 +278,7 @@
 								data-elementdelay="0.1"
 								data-endelementdelay="0.1"
 								data-endspeed="1000"
-								data-endeasing="Power4.easeIn" style="z-index: 3; color: #666; line-height: 1.2; width: 650px; max-width:650px; white-space: normal; font-size:60px; font-weight:bold;">
+								data-endeasing="Power4.easeIn" style="z-index: 3; color: #ffffff; line-height: 1.2; width: 650px; max-width:650px; white-space: normal; font-size:60px; font-weight:bold;">
 								Créez les lieux d'échange de demain.                                
 							</div>
 
@@ -349,9 +348,9 @@
 						
 						<div class="col-md-3 col-sm-12 text-right"><!-- right btn -->
 							<% if user_signed_in? %>
-								<%= link_to "Proposer un projet", new_event_path, class: "btn btn-primary btn-lg" %>
+								<%= link_to "PROPOSER UN PROJET", new_event_path, class: "btn btn-success btn-lg" %>
 							<% else %>
-								<%= link_to "Se connecter", new_user_session_path, class: "btn btn-primary btn-lg" %>
+								<%= link_to "SE CONNECTER", new_user_session_path, class: "btn btn-success btn-lg" %>
 							<% end %>
 						</div><!-- /right btn -->
 
@@ -361,7 +360,7 @@
 			</div>
 			<!-- /CALLOUT -->
 
-<section>
+<div>
 
 				<div id="portfolio" class="portfolio-nogutter">
 
@@ -421,7 +420,7 @@
 					</div>
 					
 				</div>
-			</section>
+			</div>
 			<!-- COLOR BOXES -->
 			<section class="p-0 b-0">
 				<!--
@@ -482,6 +481,5 @@
 		<!-- /wrapper -->
   
       <!-- REVOLUTION SLIDER -->
-      <%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.tools.min' %>
-      <%= javascript_include_tag 'plugins/slider.revolution/js/jquery.themepunch.revolution.min' %>
-      <%= javascript_include_tag 'js/view/demo.revolution_slider' %>
+
+

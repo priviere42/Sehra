@@ -11,19 +11,43 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
- *= require css/essentials
- *= require css/layout
- *= require plugins/bootstrap/css/bootstrap.min
- *= require css/header-1
- *= require plugins/slider.revolution/css/extralayers
- *= require plugins/slider.revolution/css/settings
+ *= require essentials
+ *= require layout
+ *= require bootstrap/css/bootstrap.min
+ *= require header-1
+ *= require slider.revolution/css/extralayers
+ *= require slider.revolution/css/settings
  *= require_tree .
 
  */
 
+#pin {
+	position: absolute;
+	left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto; 
+	width: 100px;
+}
+
 #map {
-	height: 400px; 
+	height: 300px; 
 	width: 100%;
+	border-radius: 10px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+}
+
+#map:hover {
+	height: 300px; 
+	width: 100%;
+	border-radius: 10px;
+    opacity: 1.0;
+    transition: opacity .55s ease-in-out;
+    -moz-transition: opacity .55s ease-in-out;
+    -webkit-transition: opacity .55s ease-in-out;
 }
 
 .noir-ecriture{
@@ -31,4 +55,7 @@
 	text-decoration: none !important ;
 }
 
+.btn-success {
+	background-color: #1ABC9C !important;
+}
 

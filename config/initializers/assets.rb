@@ -7,18 +7,11 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.paths << Emoji.images_path
 # Add Yarn node_modules folder to the asset load path.
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
-Rails.application.config.assets.paths << Rails.root.join('vendor')
 Rails.application.config.assets.paths << Rails.root.join('assets')
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w( admin.js admin.css )
-Rails.application.config.assets.precompile += %w( js/scripts )
-Rails.application.config.assets.precompile += %w( plugins/jquery/jquery-3.3.1.min )
-Rails.application.config.assets.precompile += %w( js/scripts )
-Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.tools.min )
-Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.revolution.min )
-Rails.application.config.assets.precompile += %w( js/view/demo.revolution_slider )
-Rails.application.config.assets.precompile += %w( plugins/owl-carousel/owl.carousel.min )
-Rails.application.config.assets.precompile += %w( plugins/isotope/isotope.pkgd.min.js )
+Rails.application.config.assets.precompile += ["assets/*"]
+
+

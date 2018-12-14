@@ -1,5 +1,4 @@
-<section>
-
+<div>
     <div id="portfolio" class="clearfix fullwidth portfolio-nogutter portfolio-isotope portfolio-isotope-3">
         <% @events.order(:votes_count).reverse_order.each do |event| %>    
             <div class="portfolio-item"><!-- item -->
@@ -9,13 +8,15 @@
 
                         <span class="item-hover">
                             <span class="overlay dark-5"></span>
-                            <span class="inner">
+                            <span class="inner">   
+                            <%= event.name.upcase %>
+                            <br>
+                            <br>
                                 <!-- lightbox -->
-                                <%= event.name %>
-                                <a class="ico-rounded lightbox" href="demo_files/images/mockups/1200x800/20-min.jpg" data-plugin-options='{"type":"image"}'>
-                                        Votes:    <%= event.votes_count %>
-
+                            <span style="font-size: 50px"> 
+                                ❤️ <%= event.votes_count %>
                                 </a>
+                            </span>    
                             </span>
                         </span>
                             <% if event.picture1.attached? %> 
@@ -24,13 +25,10 @@
                                 <%= image_tag(event.image1, size: "450", class: "img-fluid")%>
                             <% end %>            
                     </figure>
-                    <br>
                     <%end %>
                 </div>
             </div><!-- /item -->
         <% end %>
     </div>
 
-<%= javascript_include_tag "plugins/isotope/isotope.pkgd.min" %>
-
-</section>
+</div>

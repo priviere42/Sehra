@@ -11,13 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require plugins/jquery/jquery-3.3.1.min
-//= require plugins/slider.revolution/js/jquery.themepunch.tools.min
-//= require plugins/slider.revolution/js/jquery.themepunch.revolution.min
-//= require plugins/owl-carousel/owl.carousel.min
+//= require jquery/jquery-3.3.1.min
+//= require jquery.backstretch.min
+//= require isotope/isotope.pkgd.min
+//= require slider.revolution/js/jquery.themepunch.tools.min
+//= require slider.revolution/js/jquery.themepunch.revolution.min
+//= require owl-carousel/owl.carousel.min
 //= require activestorage
-//= require js/scripts
-//= require js/view/demo.revolution_slider
+//= require scripts
+//= require view/demo.revolution_slider
 //= require_tree .
 
 

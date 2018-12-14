@@ -1,47 +1,53 @@
-<div class="row">
-	<div class="col-md-6">
-    <div class="embed-responsive embed-responsive-16by9">
-	  <iframe class="embed-responsive-item" width="1905" height="765" src="https://www.youtube.com/embed/c4D786zRO6g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-	</div>
-	<div class="col-md-6">
+<section>
+  <div class="container"> 
     <div class="row">
-  <div class="col-lg-11 col-md-9 col-sm-8 order-lg-1 order-md-2 order-sm-2 mb-30">
-    <div class="box-light">
-      <div class="box-inner">
-          <div style="text-align:center;">
-              <% if user_signed_in? %>
-		          <h4 style="text-align:center;"><strong>PROPOSER UN PROJET</strong></h4>
-              <div class="section">
-              <%= form_for :new, url: events_path do |f| %>
-              <%= f.text_field :name, class:"form-control form-control-lg", placeholder:"Nom du Projet" %>              
-              <%= f.text_area :description, class:"form-control form-control-lg", style:"height:5em;", placeholder:"Description du projet" %>
-              Ville
-              <%= f.collection_select :city_id, City.order(:name), :id,:name, {}, {class: "custom-select mr-sm-2"}%>
-              Photos
-              <div class="row">
-                <div class="col-md-6">
-                  <%= f.file_field :picture1, :accept => 'jpg/png' %>
-                </div>
-                <div class="col-md-6">
-                  <%= f.file_field :picture2, :accept => 'jpg/png' %>
-                </div>
-                <br />
-                <div class="col-md-6">
-                  <%= f.file_field :picture3, :accept => 'jpg/png' %>
-                </div>
-              </div>
-              <%= f.submit 'Envoyer', class:"btn btn-success" %>
-              <% end %>
-              <% else %>
-              <% controller.redirect_to root_path %>
-              <% end %>
-            </div>
-          </div>
+      <div class="col-md-6">
+        <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" width="1905" height="765" src="https://www.youtube.com/embed/c4D786zRO6g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
-    </div>                 
-	</div>
-</div>
-</div><!-- Fin du wrapper>  
+      <div class="col-md-6">
+        <div class="row">
+      <div class="col-lg-11 col-md-9 col-sm-8 order-lg-1 order-md-2 order-sm-2 mb-30">
+        <div class="box-light">
+          <div class="box-inner">
+              <div style="text-align:center;">
+                  <% if user_signed_in? %>
+                  <h4 style="text-align:center;"><strong>PROPOSER UN PROJET</strong></h4>
+                  <div class="section">
+                  <%= form_for :new, url: events_path do |f| %>
+                  <%= f.text_field :name, class:"form-control form-control-lg", placeholder:"Nom du Projet" %>              
+                  <%= f.text_area :description, class:"form-control form-control-lg", style:"height:5em;", placeholder:"Description du projet" %>
+                  Ville
+                  <%= f.collection_select :city_id, City.order(:name), :id,:name, {}, {class: "custom-select mr-sm-2"}%>
+                  <br><br>
+                  
+                  Photos
 
+                    <div class="col-md-6">
+                      <%= f.file_field :picture1, :accept => 'jpg/png' %>
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+                      <%= f.file_field :picture2, :accept => 'jpg/png' %>
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+                      <%= f.file_field :picture3, :accept => 'jpg/png' %>
+                    </div>
+                    <br><br>
+                  <%= f.submit 'Envoyer', class:"btn btn-success" %>
+                  <% end %>
+                  <% else %>
+                  <% controller.redirect_to root_path %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>                 
+      </div>
+    </div>
+    </div>
+  </div>
+</section>

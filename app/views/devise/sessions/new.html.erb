@@ -12,7 +12,7 @@
 
               <div class="box-static box-border-top p-30">
                 <div class="box-title mb-30">
-                  <h2 class="fs-20">Je suis de retour !</h2>
+                  <h2 class="fs-20">Page de connexion</h2>
                 </div>
 
                 <form class="m-0" method="post" action="#" autocomplete="off">
@@ -22,7 +22,7 @@
                     <div class="form-group">
                       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                         <div class="field">
-                      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sehra@mail.com" %>
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sehra@mail.com", class:"form-control form-control-lg" %>
                         </div>
 
                     </div>
@@ -30,14 +30,14 @@
                     <!-- Password -->
                     <div class="form-group">
                         <div class="field">
-                      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Mot de passe" %>
+                      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Mot de passe", class:"form-control form-control-lg" %>
                         </div>
 
                     </div>
                         <% if devise_mapping.rememberable? -%>
                     <div class="field">
-                       <%= f.check_box :remember_me %>
-                        <%= f.label :remember_me %>
+                      <%= f.check_box :remember_me, class: "btn btn-primary" %>
+                      <%= f.label :se_souvenir_de_moi %>
                     </div>
                     <% end -%>
                   </div>
@@ -55,7 +55,7 @@
                     
                     <div class="col-md-6 col-sm-6 col-6 text-right">
                       <div class="actions">
-                        <%= f.submit "Log in" %>
+                        <%= f.submit "Se Connecter", class: "btn btn-success btn-lg" %>
                       </div>
                     <% end %>
                       
@@ -69,7 +69,9 @@
               </div>
               
               <div class="mt-30 text-center">
-                <%= link_to "Créer un compte", new_registration_path(resource_name) %>
+                Vous n'avez pas de compte chez <span style="color: #1ABC9C"><strong>Sehra ?</strong></span>
+                <br><br>
+                <%= button_to "Créer un compte", new_registration_path(resource_name), class: "btn btn-success btn-sm" %>
 
               </div>
 
@@ -79,28 +81,5 @@
         </div>
       </section>
 
-<!-- <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
--->
 
 
