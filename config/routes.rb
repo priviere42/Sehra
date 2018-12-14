@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   match 'vote', to: 'votes#vote', via: :post
   match 'unvote', to: 'votes#unvote', via: :delete
