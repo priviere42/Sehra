@@ -25,16 +25,16 @@
                         <div class="box1 rad-0">
                             <div class="box-icon-title">
                                 <% if current_user.vote?(@event) %>
-                                <i class="fa fa-heart-o"></i>
-                                <% else %>
                                 <i class="fa fa-heart"></i>
+                                <% else %>
+                                <i class="fa fa-heart-o"></i>
                                 <% end %>
-                               
+                              
                                 <h4 class="uppercase"><strong><%= @event.name %></strong></h4>
                                 <br />
                                 <h2><strong>DESCRIPTION</strong> DU PROJET</h2>
                             </div>
-                            <section><%= @event.description %></section>
+                            <section><%= @event.description %></section> 
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@
                                              <%= div_for @event do %>
                                                 <%= render partial: "votes/button", locals: { event: @event } %>
                                                 <div class="text-muted text-right mt-3 fs-12 mb-10">
-                                                    <span>Vous ne pouvez voter qu'une fois.</span>
+                                                    <span>Vous ne pouvez voter qu'une fois par projet.</span>
                                                 </div>
                                                 <div class="mb-30">
 
@@ -56,7 +56,7 @@
                                               <%= div_for @event do %>
                                                 <%= render partial: "votes/button", locals: { event: @event } %>
                                                 <div class="text-muted text-right mt-3 fs-12 mb-10">
-                                                    <span>Vous ne pouvez voter qu'une fois.</span>
+                                                    <span>Vous ne pouvez voter qu'une fois par projet.</span>
                                                 </div>
                                                 <div class="mb-30">
                                                 
@@ -152,28 +152,143 @@
                 <!-- completed -->
                 <!-- /completed -->
 
-                <!-- SIDE NAV -->        
-                <% if @event.picture1.attached? %> 
-                    <%= image_tag(@event.picture1, size: "300") %> 
-                <% else %>
-                    <%= image_tag(@event.image1, size: "300") %>
-                <% end %>
+                <!-- SIDE NAV -->     
+           <h5>    <u><b> Faire un don pour ce projet : </b></u></h5>
+                <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-10">
+                    <div class="front">
 
-                <% if @event.picture2.attached? %>
-                    <%= image_tag(@event.picture2, size: "300") %> 
-                <% else %>
-                    <% if @event.image2? %>
-                        <%= image_tag(@event.image2, size: "300") %>
-                    <% end %>
-                <% end %>
+                            <div class="box-icon-title"> <b> 10€ </b>
+                                <% if @event.picture1.attached? %> 
+                                    <%= image_tag(@event.picture1, size: "250") %> 
+                                <% else %>
+                                    <%= image_tag(@event.image1, size: "250") %>
+                                <% end %>
 
-                <% if @event.picture3.attached? %>
-                    <%= image_tag(@event.picture3, size: "300") %> 
-                <% else %>
-                    <% if @event.image3? %>
-                        <%= image_tag(@event.image2, size: "300") %>
-                    <% end %>
-                <% end %>
+                        </div>
+                    </div>
+
+                    <div class="back">
+                        <div class="box2 rad-0">
+                            <div class="box-dark mt-20 mb-20"><!-- .box-light OR .box-dark -->
+                                <div class="box-inner">
+                                    <%= form_tag charges_path do %>
+                                      <article>
+                                        <% if flash[:error].present? %>
+                                          <div id="error_explanation">
+                                            <p><%= flash[:error] %></p>
+                                          </div>
+                                        <% end %>
+                                        <label class="amount">
+                                          <span>Vous vous apprêtez à donner 10€, merci !</span>
+                                        </label>
+                                      </article>
+
+                                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                              data-description="Merci de votre don !"
+                                              data-amount="1000"
+                                              data-locale="auto"></script>
+                                    <% end %>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<br>
+
+                <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-10">
+                    <div class="front">
+
+                            <div class="box-icon-title"> <b> 50€ </b> 
+                                <% if @event.picture2.attached? %>
+                                    <%= image_tag(@event.picture2, size: "250") %> 
+                                <% else %>
+                                    <% if @event.image2? %>
+                                        <%= image_tag(@event.image2, size: "250") %>
+                                    <% end %>
+                                <% end %>
+
+                        </div>
+                    </div>
+
+                    <div class="back">
+                        <div class="box2 rad-0">
+                            <div class="box-dark mt-20 mb-20"><!-- .box-light OR .box-dark -->
+                                <div class="box-inner">
+                                    <%= form_tag charges_path do %>
+                                      <article>
+                                        <% if flash[:error].present? %>
+                                          <div id="error_explanation">
+                                            <p><%= flash[:error] %></p>
+                                          </div>
+                                        <% end %>
+                                        <label class="amount">
+                                          <span>Vous vous apprêtez à donner 50€, merci beaucoup !</span>
+                                        </label>
+                                      </article>
+
+                                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                              data-description="Merci de votre don !"
+                                              data-amount="5000"
+                                              data-locale="auto"></script>
+                                    <% end %>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<br>
+
+                <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-10">
+                    <div class="front">
+
+                            <div class="box-icon-title"> <b> 250€ </b> 
+                                <% if @event.picture3.attached? %>
+                                    <%= image_tag(@event.picture3, size: "250") %> 
+                                <% else %>
+                                    <% if @event.image3? %>
+                                        <%= image_tag(@event.image2, size: "250") %>
+                                    <% end %>
+                                <% end %>
+
+                        </div>
+                    </div>
+
+                    <div class="back">
+                        <div class="box2 rad-0">
+                            <div class="box-dark mt-20 mb-20"><!-- .box-light OR .box-dark -->
+                                <div class="box-inner">
+                                    <%= form_tag charges_path do %>
+                                      <article>
+                                        <% if flash[:error].present? %>
+                                          <div id="error_explanation">
+                                            <p><%= flash[:error] %></p>
+                                          </div>
+                                        <% end %>
+                                        <label class="amount">
+                                          <span>Vous vous apprêtez à donner 250€, merci du fond du coeur !</span>
+                                        </label>
+                                      </article>
+
+                                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                              data-description="Merci de votre don !"
+                                              data-amount="25000"
+                                              data-locale="auto"></script>
+                                    <% end %>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <!-- /SIDE NAV -->
             </div>
         </div>
