@@ -47,7 +47,7 @@
 
 <div>
     <div id="portfolio" class="clearfix fullwidth portfolio-nogutter portfolio-isotope portfolio-isotope-3">
-        <% @city.place.events.reverse_order.each do |event| %>    
+        <% @city.place.events.where(:active => true).reverse_order.each do |event| %>    
             <div class="portfolio-item"><!-- item -->
                 <div class="item-box">
                     <figure>
@@ -61,7 +61,7 @@
                             <br>
                                 <!-- lightbox -->
                             <span style="font-size: 50px"> 
-                                ❤️ <%= event.votes_count %>
+                                ❤ <%= event.votes_count %>
                                 </a>
                             </span>    
                             </span>
