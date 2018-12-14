@@ -45,12 +45,13 @@
 
             <!-- -->
 
-<div>
-    <div id="portfolio" class="clearfix fullwidth portfolio-nogutter portfolio-isotope portfolio-isotope-3">
-        <% @city.place.events.reverse_order.each do |event| %>    
-            <div class="portfolio-item"><!-- item -->
-                <div class="item-box">
-                    <figure>
+                            <div class="divider divider-center divider-black"><!-- divider -->
+                                <i class="fa fa-chevron-down"></i>
+                            </div>
+        <div class="row">
+            <% @city.place.events.where(:active => true).each do |event| %>
+                <div class="col-md-4">
+                    <div class="text-center">
                         <%= link_to event_path(id: event) do %>
 
                         <span class="item-hover">
