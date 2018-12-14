@@ -24,10 +24,14 @@
                     <div class="front">
                         <div class="box1 rad-0">
                             <div class="box-icon-title">
+                                <% if user_signed_in? %>
                                 <% if current_user.vote?(@event) %>
                                 <i class="fa fa-heart"></i>
                                 <% else %>
                                 <i class="fa fa-heart-o"></i>
+                                <% end %>
+                                <% else %>
+                                <i class="fa fa-heart"></i>
                                 <% end %>
                               
                                 <h4 class="uppercase"><strong><%= @event.name %></strong></h4>
