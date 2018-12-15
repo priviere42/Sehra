@@ -20,7 +20,6 @@
 //= require activestorage
 //= require scripts
 //= require view/demo.revolution_slider
-//= require bootstrap/boostrap.min.js
 //= require_tree .
 
 
