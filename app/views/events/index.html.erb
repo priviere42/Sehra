@@ -1,28 +1,8 @@
-<div>
-    <div id="portfolio" class="clearfix fullwidth portfolio-nogutter portfolio-isotope portfolio-isotope-3">
-        <% @events.where(:active => true).order(:votes_count).reverse_order.each do |event| %>    
-            <div class="portfolio-item"><!-- item -->
-                <div class="item-box">
-                    <figure>
-                        <%= link_to event_path(id: event) do %>
 
-                        <span class="item-hover">
-                            <span class="overlay dark-5"></span>
-                            <span class="inner">   
-                            <%= event.name.upcase %>
-                            <br>
-                            <br>
-                                <!-- lightbox -->
-                            <span style="font-size: 50px"> 
-                                   ❤ <%= event.votes_count %>
-                                </a>
-                            </span>    
-                            </span>
-                        </span>
 <div class="container">
 <div class="row category-grid">
 
-        <% @events.order(:votes_count).reverse_order.each do |event| %>    
+        <% @events.where(:active => true).order(:votes_count).reverse_order.each do |event| %>    
 
                         <div class="col-lg-3 col-md-3 col-sm-6 col-12">
 

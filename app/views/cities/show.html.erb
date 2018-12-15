@@ -46,31 +46,8 @@
 
 <div class="container">
 <div class="row category-grid">
-            <% @city.place.events.reverse_order.each do |event| %>    
+            <% @city.place.events.where(:active => true).reverse_order.each do |event| %>    
 
-            <!-- -->
-
-<div>
-    <div id="portfolio" class="clearfix fullwidth portfolio-nogutter portfolio-isotope portfolio-isotope-3">
-        <% @city.place.events.where(:active => true).reverse_order.each do |event| %>    
-            <div class="portfolio-item"><!-- item -->
-                <div class="item-box">
-                    <figure>
-                        <%= link_to event_path(id: event) do %>
-
-                        <span class="item-hover">
-                            <span class="overlay dark-5"></span>
-                            <span class="inner">   
-                            <%= event.name.upcase %>
-                            <br>
-                            <br>
-                                <!-- lightbox -->
-                            <span style="font-size: 50px"> 
-                                ❤ <%= event.votes_count %>
-                                </a>
-                            </span>    
-                            </span>
-                        </span>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                             <div class="card">
                             <%= link_to event_path(id: event) do %>
