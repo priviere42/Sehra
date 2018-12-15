@@ -16,19 +16,19 @@ City.create!(name: "Paris" , description: "La Capitale" ,image_url: "city/paris.
 City.create!(name: "Toulouse" , description: "La Ville Rose" ,image_url: "city/toulouse.jpg")
 
 
-Place.create!(name: "Old Library", address: "1 Main Street", image_url: "place/1.jpg", city_id: 1, latitude: 44.837789, longitude: -0.57918)
-Place.create!(name: "Attraction Park", address: "2 Main Street", image_url: "place/2.jpg", city_id: 2, latitude: 45.764043, longitude: 4.835659)
-Place.create!(name: "Abandonned Road", address: "3 Main Street", image_url: "place/3.png", city_id: 3, latitude: 43.300000, longitude: 5.400000)
-Place.create!(name: "Empty Pool", address: "4 Main Street", image_url: "place/4.jpg", city_id: 4, latitude: 43.700000, longitude: 7.250000)
-Place.create!(name: "Destroyed Stadium", address: "5 Main Street", image_url: "place/5.jpg", city_id: 5, latitude: 48.866667, longitude: 2.333333)
-Place.create!(name: "Building", address: "6 Main Street", image_url: "place/6.jpg", city_id: 6, latitude: 43.600000, longitude: 1.433333)
+Place.create!(name: "Bibliothèque", address: "1 Rue Friche", image_url: "place/1.jpg", city_id: 1, latitude: 44.837789, longitude: -0.57918)
+Place.create!(name: "Parc d'attraction", address: "2 Rue Friche", image_url: "place/2.jpg", city_id: 2, latitude: 45.764043, longitude: 4.835659)
+Place.create!(name: "Route", address: "3 Rue Friche", image_url: "place/3.png", city_id: 3, latitude: 43.300000, longitude: 5.400000)
+Place.create!(name: "Piscine", address: "4 Rue Frich", image_url: "place/4.jpg", city_id: 4, latitude: 43.700000, longitude: 7.250000)
+Place.create!(name: "Stade", address: "5 Rue Friche", image_url: "place/5.jpg", city_id: 5, latitude: 48.866667, longitude: 2.333333)
+Place.create!(name: "Bâtiment", address: "6 Rue Friche", image_url: "place/6.jpg", city_id: 6, latitude: 43.600000, longitude: 1.433333)
 
 
 20.times do |index|
     Event.create!(name: Faker::Music.unique.album, description: Faker::Lorem.sentence(40), image1: "event/#{index+1}.jpg", image2: "event/#{rand(1..20)}.jpg", image3: "event/#{rand(1..20)}.jpg", place_id: rand(1..6), active: true)
 end
 
-300.times do |index|
+20.times do |index|
     User.create!(email: "user#{index+1}@mail.com", password: "password", first_name: Faker::Name.first_name ,last_name: Faker::Name.last_name)
 end
 

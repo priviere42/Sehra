@@ -7100,7 +7100,7 @@ section#slider:not(.custom-form) .btn-default {
 	}
 	.tp-caption.text_white, 
 	.tp-caption.text_black, 
-	.tp-caption.block_white, 
+	.tp-caption.block_green, 
 	.tp-caption.block_theme_color, 
 	.tp-caption.block_black {
 		white-space: nowrap;
@@ -7114,8 +7114,8 @@ section#slider:not(.custom-form) .btn-default {
 		text-shadow:none;
 	}
 	
-	.tp-caption.block_white {
-		background-color: #fff;
+	.tp-caption.block_green {
+		background-color: #1ABC9C;
 	}
 	.tp-caption.block_black {
 		background-color: #000;
