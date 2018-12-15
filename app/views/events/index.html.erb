@@ -1,34 +1,28 @@
-<div>
-    <div id="portfolio" class="clearfix fullwidth portfolio-nogutter portfolio-isotope portfolio-isotope-3">
+<div class="container">
+<div class="row category-grid">
+
         <% @events.order(:votes_count).reverse_order.each do |event| %>    
-            <div class="portfolio-item"><!-- item -->
-                <div class="item-box">
-                    <figure>
-                        <%= link_to event_path(id: event) do %>
 
-                        <span class="item-hover">
-                            <span class="overlay dark-5"></span>
-                            <span class="inner">   
-                            <%= event.name.upcase %>
-                            <br>
-                            <br>
-                                <!-- lightbox -->
-                            <span style="font-size: 50px"> 
-                                ❤️ <%= event.votes_count %>
-                                </a>
-                            </span>    
-                            </span>
-                        </span>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+
+                            <div class="card">
+                            <%= link_to event_path(id: event) do %>
                             <% if event.picture1.attached? %> 
-                                <%= image_tag(event.picture1, size: "450", class: "img-fluid") %> 
+                                <%= image_tag(event.picture1, class: "card-img-top") %> 
                             <% else %>
-                                <%= image_tag(event.image1, size: "450", class: "img-fluid")%>
-                            <% end %>            
-                    </figure>
-                    <%end %>
-                </div>
-            </div><!-- /item -->
-        <% end %>
-    </div>
-
+                                <%= image_tag(event.image1, class: "card-img-top")%>
+                            <% end %>        
+                            <% end %>
+                                <div class="card-block">
+                                    <p class="text-black fs-20 mb-20 block"><%= event.name %></p>
+                                    <p class="text-black fs-20 mb-20 block">à <%= event.place.city.name %></p>
+                                    <p class="text-black fs-20 mb-20 block"><%= event.votes.count %> votes ❤️</p>
+                                    <p class="fs-15 mb-20"><%= event.description %></p>
+                                    <%= link_to "VIEW PROJECT", event_path(id: event), class: "text-muted fs-15" %>
+                                </div>
+                            </div>
+                            </figure>
+                        </div>
+                        <% end %>
+</div>
 </div>

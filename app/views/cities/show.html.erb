@@ -15,7 +15,7 @@
 				<span class="overlay dark-4"><!-- dark overlay [1 to 9 opacity] --></span>
 				<div class="container">
 
-					<p class="fs-10">Bienvenue à la friche de<p>
+					<p class="fs-20">Bienvenue à la friche et aux projets de:<p>
 					<p class="fs-60"><strong><%= @city.name %></strong><p>
                     <p class="fs-25">"<%= @city.place.name %>"<p>
                     <p class="fs-25">Ceci est une friche. Une très belle friche. Elle est tellement belle que j'en ai de la chair de poule. Oualala elle est vraiment magnifique.<p>
@@ -32,55 +32,42 @@
                         <div id="map" style="margin: 0 auto"></div>
                         
                     <% else %>
-                    <p class="fs-30">Connectez-vous pour avoir accès à plus d'informations sur le lieu ❤️<p>
+                    <p class="fs-30" style="text-align: center">Connectez-vous pour avoir accès à plus d'informations sur le lieu ❤️<p>
                     <% end %>
 				</div>
 			</section>
 			<!-- /PAGE HEADER -->
 
 
-
-
-
-
             <!-- -->
-
-<div>
-    <div id="portfolio" class="clearfix fullwidth portfolio-nogutter portfolio-isotope portfolio-isotope-3">
-        <% @city.place.events.reverse_order.each do |event| %>    
-            <div class="portfolio-item"><!-- item -->
-                <div class="item-box">
-                    <figure>
-                        <%= link_to event_path(id: event) do %>
-
-                        <span class="item-hover">
-                            <span class="overlay dark-5"></span>
-                            <span class="inner">   
-                            <%= event.name.upcase %>
-                            <br>
-                            <br>
-                                <!-- lightbox -->
-                            <span style="font-size: 50px"> 
-                                ❤️ <%= event.votes_count %>
-                                </a>
-                            </span>    
-                            </span>
-                        </span>
-                            <% if event.picture1.attached? %> 
-                                <%= image_tag(event.picture1, size: "450", class: "img-fluid") %> 
-                            <% else %>
-                                <%= image_tag(event.image1, size: "450", class: "img-fluid")%>
-                            <% end %>            
-                    </figure>
-                    <%end %>
-                </div>
-            </div><!-- /item -->
-        <% end %>
-    </div>
 
 
 </div>
 
+<div class="container">
+<div class="row category-grid">
+            <% @city.place.events.reverse_order.each do |event| %>    
+
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                            <div class="card">
+                            <%= link_to event_path(id: event) do %>
+                            <% if event.picture1.attached? %> 
+                                <%= image_tag(event.picture1, class: "card-img-top") %> 
+                            <% else %>
+                                <%= image_tag(event.image1, class: "card-img-top")%>
+                            <% end %>     
+                            <% end %>       
+                                <div class="card-block">
+                                    <p class="text-black fs-20 mb-20 block"><%= event.name %></p>
+                                    <p class="text-black fs-20 mb-20 block"><%= event.votes.count %> votes ❤️</p>
+                                    <p class="fs-15 mb-20"><%= event.description %></p>
+                                    <%= link_to "VIEW PROJECT", event_path(id: event), class: "text-muted fs-15" %>
+                                </div>
+                            </div>
+                        </div>
+                        <% end %>
+</div>
+</div>
 
 
 
