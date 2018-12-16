@@ -15,9 +15,17 @@
                             <% end %>        
                             <% end %>
                                 <div class="card-block">
-                                    <p class="text-black fs-20 mb-20 block"><%= event.name %></p>
-                                    <p class="text-black fs-20 mb-20 block">à <%= event.place.city.name %></p>
-                                    <p class="text-black fs-20 mb-20 block"><%= event.votes.count %> votes ❤️</p>
+                                    <p class="text-black fs-20 mb-6 block"> <b><%= event.name %></b></p>
+                                    <p class="text-black fs-16 mb-8 block">à <%= event.place.city.name %></p>
+
+
+                                    <div class="all"> <br>
+                                        <div class="progress progress-xxs center" style="width: 100%; max-width: 100%; height: 0.5em; display: inline-block; text-align: center; position: inherit">
+                                            <div class="progress-bar" style="width: <%= (((event.votes.count)*100)/User.count) %>%; max-width: 100%; height: 0.5em;background-color: #99D17B"></div>
+                                        </div>
+                                    </div>
+                                
+                                    <p class="text-black fs-16 mb-20 block" style="display: inline-block; text-align: center;"><%= event.votes.count %> votes ❤️</p>
                                     <p class="fs-15 mb-20"><%= event.description %></p>
                                     <%= link_to "VIEW PROJECT", event_path(id: event), class: "text-muted fs-15" %>
                                 </div>
