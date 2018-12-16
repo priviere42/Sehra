@@ -12,16 +12,18 @@
 			<section class="page-header page-header-md b-0 dark" 
 				data-background="<%= image_path(@city.place.image_url) %>">
 
-				<span class="overlay dark-4"><!-- dark overlay [1 to 9 opacity] --></span>
+				<span class="overlay dark-6"><!-- dark overlay [1 to 9 opacity] --></span>
 				<div class="container">
 
-					<p class="fs-20">Bienvenue à la friche et aux projets de:<p>
-					<p class="fs-60"><strong><%= @city.name %></strong><p>
-                    <p class="fs-25">"<%= @city.place.name %>"<p>
-                    <p class="fs-25">Ceci est une friche. Une très belle friche. Elle est tellement belle que j'en ai de la chair de poule. Oualala elle est vraiment magnifique.<p>
-                    
+                    <div class="heading-title heading-border heading-color mt-0">
+                        <p class="fs-15">Bienvenue sur la page de:<p>
+                        <p class="fs-55"><strong style="color: #1ABC9C"><%= @city.name[0] %></strong><strong><%= @city.name[1..-1] %><span style="color: #1ABC9C">.</strong></span><p>
+                        <p class="fs-20">Le lieu actuel de cette ville "<%= @city.place.name %>"<p>
+                        <p class="fs-20">Vous retrouverez ici tous les évènements que la communauté a proposé pour le lieu de <%= @city.name %><p>
+					</div>
+
                     <% if user_signed_in? %>
-                    <p class="fs-20"> Adresse: <%= @city.place.address %><p>
+                    <p class="fs-15"> Adresse: <%= @city.place.address %><p>
                         
                             <div id="pin">        
                                 <br><br>                        
@@ -32,7 +34,7 @@
                         <div id="map" style="margin: 0 auto"></div>
 
                     <% else %>
-                    <p class="fs-30" style="text-align: center">Connectez-vous pour avoir accès à plus d'informations sur le lieu ❤️<p>
+                    <p class="fs-20" style="text-align: center">Connectez-vous pour plus d'informations.<p>
                     <% end %>
 				</div>
 			</section>
