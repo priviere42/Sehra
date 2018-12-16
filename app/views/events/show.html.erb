@@ -1,15 +1,5 @@
-
-<section class="page-header page-header-xs">
-    <div class="container">
-
-        <!-- breadcrumbs -->
-        <ol class="breadcrumb breadcrumb-inverse">
-            <li><a href="/events">Projets</a></li>
-            <li class="active"><%= link_to "#{@event.name}", event_path(id: @event) %></li>
-        </ol><!-- /breadcrumbs -->
-
-    </div>
-</section>
+<div>
+<br><br>
 <!-- /PAGE HEADER -->
 
 <!-- -->
@@ -19,8 +9,9 @@
             <!-- RIGHT -->
             <div class="col-lg-9 col-md-9 col-sm-8 order-lg-1 order-md-2 order-sm-2 mb-30">
 
-                <h4 class="uppercase"><strong><%= @event.name %></strong></h4>
-                    <h2><strong>DESCRIPTION</strong> DU PROJET</h2>
+                <h4><strong><%= @event.name %></strong> à <strong><%= City.find(@event.place.city_id).name %></strong></h4>
+
+                    <h3><strong>DESCRIPTION</strong> DU PROJET</h3>
                     <section> <%= @event.description %> </section>
 
                         <div class="box2 rad-0">
@@ -127,11 +118,6 @@
             <!-- LEFT -->
             <div class="col-lg-3 col-md-3 col-sm-4 order-lg-1 order-md-1 order-sm-1">
             
-                <div class="thumbnail text-center">
-                    <%= image_tag(@place_of_event.image_url, size: "100") %>
-                    <h2 class="fs-18 mt-10 mb-0"><%= @event.name %></h2>
-                    <h3 class="fs-11 mt-0 mb-10 text-muted"><%= @place_of_event.name %></h3>
-                </div>
 
                 <!-- completed -->
                 <!-- /completed -->
@@ -279,8 +265,7 @@
     </div>
 
 <% if user_signed_in? %>
-<h4 class="uppercase"  style="text-align:center;"><strong>LOCALISATION</strong> DU PROJET</h4>
-<div id="map">
+<div id="map" style="opacity: 1">
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.googlejs_api %>&callback=initMap"></script>
         <script>
             function initMap() {
@@ -295,8 +280,7 @@
         </script>
     </div>    
 <% else %>
-<h4 class="uppercase"  style="text-align:center;">MERCI DE VOUS <strong>CONNECTER</strong> POUR VOIR LA <strong>LOCALISATION</strong> DU PROJET</h4>
 <% end %>
 </div>
   
-
+</div>
