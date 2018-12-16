@@ -19,30 +19,10 @@
             <!-- RIGHT -->
             <div class="col-lg-9 col-md-9 col-sm-8 order-lg-1 order-md-2 order-sm-2 mb-30">
 
-                <!-- FLIP BOX -->
-                <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-0">
-                    <div class="front">
-                        <div class="box1 rad-0">
-                            <div class="box-icon-title">
-                                <% if user_signed_in? %>
-                                <% if current_user.vote?(@event) %>
-                                <i class="fa fa-heart"></i>
-                                <% else %>
-                                <i class="fa fa-heart-o"></i>
-                                <% end %>
-                                <% else %>
-                                <i class="fa fa-heart"></i>
-                                <% end %>
-                              
-                                <h4 class="uppercase"><strong><%= @event.name %></strong></h4>
-                                <br />
-                                <h2><strong>DESCRIPTION</strong> DU PROJET</h2>
-                            </div>
-                            <section><%= @event.description %></section> 
-                        </div>
-                    </div>
+<h4 class="uppercase"><strong><%= @event.name %></strong></h4>
+                <h2><strong>DESCRIPTION</strong> DU PROJET</h2>
+               <section> <%= @event.description %> </section>
 
-                    <div class="back">
                         <div class="box2 rad-0">
                             <div class="box-light mt-20"><!-- .box-light OR .box-dark -->
                                 <div class="box-inner">
@@ -70,15 +50,15 @@
 
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                <!-- /FLIP BOX -->
 
+
+                              
 
                 <div class="box-light"><!-- .box-light OR .box-dark -->
 
                     <div class="box-inner">
+                            <h4 class="uppercase"><strong>Pourquoi voter pour un projet ?</strong></h4>
+                                <br />
                     
                         <div class="timeline"><!-- .timeline-inverse = right position [left on RTL] -->
 
@@ -94,9 +74,9 @@
                                     <h2 class="uppercase">EVALUATION DU PROJET</h2>
                                     <p>Votre pouvoir est ici d'apporter une visibilité au projet de votre choix.
                                     <br/>Nos recommandations pour évaluer le potentiel de ce dernier sont les suivantes ;
-                                    <br/>Le projet a :
-                                    <br/>+ des objectifs et activités réalistes ;
-                                    <br/>+ Prend en compte et évalue de façon adéquate les risques lié à l'activité et à l'emplacement ;
+                                    <br/>Le projet :
+                                    <br/>+ A des objectifs et activités réalistes ;
+                                    <br/>+ Prend en compte et évalue de façon adéquate les risques liés à l'activité et à l'emplacement ;
                                     <br/>+ Propose une véritable structure de gestion du projet ;
                                     <br/>+ Vous plaît vraiment !
                                     </p>
@@ -112,9 +92,10 @@
                                     </div>
                                     <!-- /timeline entry -->
 
-                                    <h2 class="uppercase">VOTE & SELECTION</h2>
+                                    <h2 class="uppercase">VOTE, SELECTION, FINANCEMENT</h2>
                                     <p>Le projet ayant reçu le plus de votes dans le temps imparti sera sélectionné.
-                                    <br/>Vous ne pouvez voter que pour un seul projet par localisation et par ville, mais vous pouvez voter pour des projets situés dans des villes différentes.
+                                    <br/>Il est ainsi conseillé de ne voter que pour un seul projet par lieu afin de ne pas ralentir le processus de mise en concurrence, mais vous pouvez voter pour des projets situés dans des villes différentes.
+                                    <br/>Par ailleurs, vous avez la possibilité de participer au financement du projet en survolant les photos qui y sont associées sur la droite de cette page. Le montant de votre don vous sera reversé intégralement si le projet n'aboutit pas.
                                     </p>
                                 </div>
                                 <!-- /ITEM -->
@@ -129,16 +110,23 @@
                                     <!-- /timeline entry -->
 
                                     <h2 class="uppercase">MISE EN PLACE</h2>
-                                    <p>Le projet gagnant bénéficiera d'une liste de votes permettant au porteur de projet d'appuyer sa demande auprès des acteurs privés (investisseurs, promoteurs) ou publics (collectivités, municipalités, organismes).
+                                    <p>Le projet gagnant bénéficiera d'une liste de votes permettant au porteur de projet d'appuyer sa demande auprès d'acteurs privés (investisseurs, promoteurs) ou publics (collectivités, municipalités, organismes).
                                     <br/>Il bénéficiera par ailleurs d'un accompagnement et du support logistique de Sehra pour la mise en place du projet ainsi que pour son financement, en partenariat avec une plateforme de CrowdFunding.
                                     </p>
                                 </div>
                                 <!-- /ITEM -->
                         </div>
 
-                    </div>
+                                
+                            </div>
+                            
+                        </div>
+</div>
 
-                </div>
+                <!-- /FLIP BOX -->
+
+
+            
 
 
             </div>
@@ -157,7 +145,7 @@
                 <!-- /completed -->
 
                 <!-- SIDE NAV -->     
-           <h5>    <u><b> Faire un don: </b></u></h5>
+           <h5>    <u><b> Faire un don: </b></u></h5> <br>
                 <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-10">
                     <div class="front">
 
