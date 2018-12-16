@@ -39,9 +39,7 @@
                                                 <% else %>
                                               <%= div_for @event do %>
                                                 <%= render partial: "votes/button", locals: { event: @event } %>
-                                                <div class="text-muted text-right mt-3 fs-12 mb-10">
-                                                    <span>Vous ne pouvez voter qu'une fois par projet.</span>
-                                                </div>
+
                                                 <div class="mb-30">
                                                 
                                                     <% end %>                                               
@@ -139,7 +137,7 @@
                 <!-- /completed -->
 
                 <!-- SIDE NAV -->     
-           <h5>    <u><b> Faire un don: </b></u></h5> <br>
+          <div class="gift" style="text-align: center;"><h5>    <u><b> Faire un don: </b></u></h5> <br></div>
                 <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-10">
                     <div class="front">
 
