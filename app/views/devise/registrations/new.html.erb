@@ -58,6 +58,9 @@
                   <div class="field">
                     <br />
                     <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mot de passe", class:"form-control form-control-lg" %>
+                      <% if @minimum_password_length %>
+                        <em class="fs-15"><%= @minimum_password_length %> caractères minimum</em>
+                      <% end %>
                   </div>
 
                   <div class="field">
