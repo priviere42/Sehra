@@ -115,34 +115,28 @@
 
             
             <!-- LEFT -->
-            <div class="col-lg-3 col-md-3 col-sm-4 order-lg-1 order-md-1 order-sm-1">
+            <div class="col-lg-3 col-md-1 col-sm-4 order-lg-1 order-md-1 order-sm-1">
             
 
                 <!-- completed -->
                 <!-- /completed -->
 
-                <!-- SIDE NAV -->     
+              <!-- SIDE NAV -->     
                     <div class="heading-title heading-border heading-color mt-0">
                         <h2 class="fs-18 fw-400">FAIRE UN DON</h2>
-                        <p class="fs-13">Sehra is not a job, is a lifestyle</p>
+                        <p class="fs-13">Sehra is not a job, it's a lifestyle.</p>
                     </div>
+
                 <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-10">
+
+
                     <div class="front">
-
-                            <div class="box-icon-title"> <b> 10€ </b>
-                                <% if @event.picture1.attached? %> 
-                                    <%= image_tag(@event.picture1, size: "250") %> 
-                                <% else %>
-                                    <%= image_tag(@event.image1, size: "250") %>
-                                <% end %>
-
-                        </div>
+                    <span style="font-size: 30px; color: #54DDBD;text-align: center; display: inline-block; position: relative;"><b> 10€ </b></span>
                     </div>
 
                     <div class="back">
                         <div class="box2 rad-0">
-                            <div class="box-dark mt-20 mb-20"><!-- .box-light OR .box-dark -->
-                                <div class="box-inner">
+                            <div class="box-dark mt-20 mb-20" ><!-- .box-light OR .box-dark -->
                                     <%= form_tag charges_path do %>
                                       <article>
                                         <% if flash[:error].present? %>
@@ -150,9 +144,7 @@
                                             <p><%= flash[:error] %></p>
                                           </div>
                                         <% end %>
-                                        <label class="amount">
-                                          <span>Vous vous apprêtez à donner 10€, merci !</span>
-                                        </label>
+
                                       </article>
 
                                       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -163,33 +155,22 @@
                                     <% end %>
 
 
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-<br>
 
                 <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-10">
+
                     <div class="front">
-
-                            <div class="box-icon-title"> <b> 50€ </b> 
-                                <% if @event.picture2.attached? %>
-                                    <%= image_tag(@event.picture2, size: "250") %> 
-                                <% else %>
-                                    <% if @event.image2? %>
-                                        <%= image_tag(@event.image2, size: "250") %>
-                                    <% end %>
-                                <% end %>
-
-                        </div>
+                    <span style="font-size: 30px; color: #54DDBD;text-align: center; display: inline-block; position: relative;"><b> 50€ </b></span>
                     </div>
+
 
                     <div class="back">
                         <div class="box2 rad-0">
                             <div class="box-dark mt-20 mb-20"><!-- .box-light OR .box-dark -->
-                                <div class="box-inner">
                                     <%= form_tag charges_path do %>
                                       <article>
                                         <% if flash[:error].present? %>
@@ -197,9 +178,7 @@
                                             <p><%= flash[:error] %></p>
                                           </div>
                                         <% end %>
-                                        <label class="amount">
-                                          <span>Vous vous apprêtez à donner 50€, merci beaucoup !</span>
-                                        </label>
+
                                       </article>
 
                                       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -209,32 +188,20 @@
                                               data-locale="auto"></script>
                                     <% end %>
 
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-<br>
 
+            
                 <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-10">
                     <div class="front">
-
-                            <div class="box-icon-title"> <b> 250€ </b> 
-                                <% if @event.picture3.attached? %>
-                                    <%= image_tag(@event.picture3, size: "250") %> 
-                                <% else %>
-                                    <% if @event.image3? %>
-                                        <%= image_tag(@event.image2, size: "250") %>
-                                    <% end %>
-                                <% end %>
-
-                        </div>
+                    <span style="font-size: 30px; color: #54DDBD;text-align: center; display: inline-block; position: relative;"><b> 250€ </b></span>
                     </div>
 
                     <div class="back">
                         <div class="box2 rad-0">
                             <div class="box-dark mt-20 mb-20"><!-- .box-light OR .box-dark -->
-                                <div class="box-inner">
                                     <%= form_tag charges_path do %>
                                       <article>
                                         <% if flash[:error].present? %>
@@ -242,9 +209,7 @@
                                             <p><%= flash[:error] %></p>
                                           </div>
                                         <% end %>
-                                        <label class="amount">
-                                          <span>Vous vous apprêtez à donner 250€, merci du fond du coeur !</span>
-                                        </label>
+
                                       </article>
 
                                       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -254,12 +219,108 @@
                                               data-locale="auto"></script>
                                     <% end %>
 
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-10">
+
+                    <div class="front">
+                    <span style="font-size: 30px; color: #54DDBD;text-align: center; display: inline-block; position: relative;"><b> 500€ </b></span>
+                    </div>
+
+
+                    <div class="back">
+                        <div class="box2 rad-0">
+                            <div class="box-dark mt-20 mb-20"><!-- .box-light OR .box-dark -->
+                                    <%= form_tag charges_path do %>
+                                      <article>
+                                        <% if flash[:error].present? %>
+                                          <div id="error_explanation">
+                                            <p><%= flash[:error] %></p>
+                                          </div>
+                                        <% end %>
+
+                                      </article>
+
+                                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                              data-description="Merci de votre don !"
+                                              data-amount="50000"
+                                              data-locale="auto"></script>
+                                    <% end %>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-10">
+
+                    <div class="front">
+                    <span style="font-size: 30px; color: #54DDBD;text-align: center; display: inline-block; position: relative;"><b> 1000€ </b></span>
+                    </div>
+
+
+                    <div class="back">
+                        <div class="box2 rad-0">
+                            <div class="box-dark mt-20 mb-20"><!-- .box-light OR .box-dark -->
+                                    <%= form_tag charges_path do %>
+                                      <article>
+                                        <% if flash[:error].present? %>
+                                          <div id="error_explanation">
+                                            <p><%= flash[:error] %></p>
+                                          </div>
+                                        <% end %>
+
+                                      </article>
+
+                                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                              data-description="Merci de votre don !"
+                                              data-amount="100000"
+                                              data-locale="auto"></script>
+                                    <% end %>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-flip box-icon box-icon-center box-icon-round box-icon-large text-center m-10">
+
+                    <div class="front">
+                    <span style="font-size: 30px; color: #54DDBD;text-align: center; display: inline-block; position: relative;"><b> 5000€ </b></span>
+                    </div>
+
+
+                    <div class="back">
+                        <div class="box2 rad-0">
+                            <div class="box-dark mt-20 mb-20"><!-- .box-light OR .box-dark -->
+                                    <%= form_tag charges_path do %>
+                                      <article>
+                                        <% if flash[:error].present? %>
+                                          <div id="error_explanation">
+                                            <p><%= flash[:error] %></p>
+                                          </div>
+                                        <% end %>
+
+                                      </article>
+
+                                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                              data-description="Merci de votre don !"
+                                              data-amount="500000"
+                                              data-locale="auto"></script>
+                                    <% end %>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
                 <!-- /SIDE NAV -->
             </div>
