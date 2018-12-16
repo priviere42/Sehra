@@ -2,9 +2,25 @@
   <div class="container"> 
     <div class="row">
       <div class="col-md-6">
-        <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" width="1905" height="765" src="https://www.youtube.com/embed/c4D786zRO6g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+          <h2 class="fs-30 text-center-xs">Proposer un projet.</h2>
+
+          <p>La proposition de projet est est ouverte à toutes et à tous.</p>
+
+          <ul class="list-unstyled login-features">
+            <li>
+              <i class="glyphicon glyphicon-picture"></i> <strong>Au moins une image</strong> est requise pour pouvoir avoir un projet éligible à la publication.
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-check"></i> <strong>Si votre projet est accepté</strong>  il sera soumis au vote de la communauté, et pourra recevoir des dons pour sa réalisation.
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-usd"></i> <strong>Une fois publié</strong> il sera soumis au vote de la communauté, et pourra recevoir des dons pour sa réalisation.
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-thumbs-up"></i> <strong>Dès 500 votes réunis</strong> votre projet sehra sélectionné pour bénéficier de l’accompagnement de Sehra pour sa mise en place et son développement.
+            </li>
+          </ul>
+
       </div>
       <div class="col-md-6">
         <div class="row">
@@ -13,7 +29,6 @@
           <div class="box-inner">
               <div style="text-align:center;">
                   <% if user_signed_in? %>
-                  <h4 style="text-align:center;"><strong>PROPOSER UN PROJET</strong></h4>
                   <div class="section">
                   <%= form_for :new, url: events_path do |f| %>
                   <%= f.text_field :name, class:"form-control form-control-lg", placeholder:"Nom du Projet" %>              
