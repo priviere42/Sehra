@@ -12,7 +12,7 @@
 
               <div class="box-static box-border-top p-30">
                 <div class="box-title mb-30">
-                  <h2 class="fs-20">Modifier son mot de passe</h2>
+                  <h2 class="fs-20">Modifier mon profil</h2>
                 </div>
 
                     
@@ -21,7 +21,7 @@
 
   <div class="field">
 
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control form-control-lg" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -30,25 +30,30 @@
 
   <div class="field">
 <br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mot de passe" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Mot de passe", class: "form-control form-control-lg" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %> caractères minimum</em>
     <% end %>
   </div>
 
   <div class="field">
 <br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmation", class: "form-control form-control-lg" %>
   </div>
 
   <div class="field">
 <br />
-    <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe actuel" %>
+    <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Mot de passe actuel", class: "form-control form-control-lg" %>
   </div>
   <br/>
+  
+  <div style="margin: 0 auto">
+  <div style="text-align: center">
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Mettre à jour", class: "btn btn-success btn-lg" %>
+  </div>
+  </div>
   </div>
 
                       
