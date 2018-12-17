@@ -1,6 +1,6 @@
 # SEHRA. WITH ♥️ FROM TOULOUSE 🏜
 
-# COMPOSITION DE NOTRE GANG 🏴‍☠️
+## COMPOSITION DE NOTRE GANG 🏴‍☠️
 
 ♾ Paul Trin-Dinh @askprod (Back-end & Front-end) <br>
 ♾ Paul Rivière @blud7 (Back-end & Front-end) <br>
@@ -8,7 +8,7 @@
 ♾ Evan Bourguoin @Cyran0 (Front-end) <br>
 ♾ Sophie Chateau @XxKevinou (Front-end)
 
-# PRODUCTION LINK 💻
+## PRODUCTION LINK 💻
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
