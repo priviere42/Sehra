@@ -1,24 +1,23 @@
-# README
+# SEHRA. WITH ♥️ FROM TOULOUSE 🏜
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## COMPOSITION DE NOTRE GANG 🏴‍☠️
 
-Things you may want to cover:
+♾ Paul Trin-Dinh @askprod (Back-end & Front-end) <br>
+♾ Paul Rivière @blud7 (Back-end & Front-end) <br>
+♾ Patrick Razafindrakoto @patpasha (Back-end & Front-end) <br>
+♾ Evan Bourguoin @Cyran0 (Front-end) <br>
+♾ Sophie Chateau @XxKevinou (Front-end)
 
-* Ruby version
+## PRODUCTION LINK 💻
 
-* System dependencies
+🔆 Venez vivre l'expérience Sehra en visitant notre application ➡️ http://sehra.herokuapp.com/ 🔥
 
-* Configuration
+## LE PITCH DE NOTRE PROJET
 
-* Database creation
+Sehra est la plateforme ...
 
-* Database initialization
+## COMMENT FONCTIONNE L'APPLICATION ?
 
-* How to run the test suite
+Ui
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* à continuer 
