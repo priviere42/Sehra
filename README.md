@@ -9,25 +9,15 @@
 ♾ Sophie Chateau @XxKevinou (Front-end)
 
 ## PRODUCTION LINK 💻
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+🔆 Venez vivre l'expérience Sehra en visitant notre application ➡️ http://sehra.herokuapp.com/ 🔥
 
-* Ruby version
+## LE PITCH DE NOTRE PROJET
 
-* System dependencies
+Sehra est la plateforme ...
 
-* Configuration
+## COMMENT FONCTIONNE L'APPLICATION ?
 
-* Database creation
+Ui
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* à continuer 
