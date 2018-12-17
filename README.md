@@ -2,10 +2,10 @@
 
 # COMPOSITION DE NOTRE GANG 🏴‍☠️
 
-♾ Paul Trin-Dinh @askprod (Back-end & Front-end)
-♾ Paul Rivière @blud7 (Back-end & Front-end)
-♾ Patrick Razafindrakoto @patpasha (Back-end & Front-end)
-♾ Evan Bourguoin @Cyran0 (Front-end)
+♾ Paul Trin-Dinh @askprod (Back-end & Front-end) <br>
+♾ Paul Rivière @blud7 (Back-end & Front-end) <br>
+♾ Patrick Razafindrakoto @patpasha (Back-end & Front-end) <br>
+♾ Evan Bourguoin @Cyran0 (Front-end) <br>
 ♾ Sophie Chateau @XxKevinou (Front-end)
 
 # PRODUCTION LINK 💻
