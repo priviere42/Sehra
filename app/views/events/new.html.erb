@@ -8,10 +8,10 @@
 
           <ul class="list-unstyled login-features">
             <li>
-              <i class="glyphicon glyphicon-picture"></i> <strong>Au moins une image</strong> est requise pour pouvoir avoir un projet éligible à la publication.
+              <i class="glyphicon glyphicon-picture"></i> <strong>Au moins une image</strong> au format .png ou .jpg est requise pour pouvoir avoir un projet éligible à la publication.
             </li>
             <li>
-              <i class="glyphicon glyphicon-check"></i> <strong>Si votre projet est accepté</strong>  il sera soumis au vote de la communauté, et pourra recevoir des dons pour sa réalisation.
+              <i class="glyphicon glyphicon-check"></i> <strong>Si votre projet est accepté</strong> par la modération, il sera publié sous 48h sur le site.
             </li>
             <li>
               <i class="glyphicon glyphicon-usd"></i> <strong>Une fois publié</strong> il sera soumis au vote de la communauté, et pourra recevoir des dons pour sa réalisation.
@@ -37,21 +37,33 @@
                   <%= f.collection_select :city_id, City.order(:name), :id,:name, {}, {class: "custom-select mr-sm-2"}%>
                   <br><br>
                   
-                  Photos
+      Photos
 
-                    <div class="col-md-6">
-                      <%= f.file_field :picture1, :accept => 'jpg/png' %>
-                    </div>
-                    <br>
-                    <div class="col-md-6">
-                      <%= f.file_field :picture2, :accept => 'jpg/png' %>
-                    </div>
-                    <br>
-                    <div class="col-md-6">
-                      <%= f.file_field :picture3, :accept => 'jpg/png' %>
-                    </div>
-                    <br><br>
-                  <%= f.submit 'Envoyer', class:"btn btn-success" %>
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-success btn-success btn-inverse" onclick="$(this).parent().find('input[type=file]').click();">Parcourir</span>
+          <%= f.file_field :picture1, :accept => 'jpg/png', onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+        </span>
+        <span class="form-control"></span>
+      </div>
+      <br>
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-small btn-success btn-inverse" onclick="$(this).parent().find('input[type=file]').click();">Parcourir</span>
+          <%= f.file_field :picture2, :accept => 'jpg/png', onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+        </span>
+        <span class="form-control"></span>
+      </div>
+      <br>
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-small btn-success btn-inverse" onclick="$(this).parent().find('input[type=file]').click();">Parcourir</span>
+          <%= f.file_field :picture3, :accept => 'jpg/png', onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+        </span>
+        <span class="form-control"></span>
+      </div>
+      <br><br>
+      <%= f.submit 'Envoyer', class:"btn btn-success" %>
                   <% end %>
                   <% else %>
                   <% controller.redirect_to root_path %>
