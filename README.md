@@ -14,10 +14,16 @@
 
 ## LE PITCH DE NOTRE PROJET
 
-Sehra est la plateforme ...
+Sehra est la première plateforme d'espaces communautaires éphémères. 
 
 ## COMMENT FONCTIONNE L'APPLICATION ?
 
-Ui
+Notre équipe s'occupe de recenser une friche industrielle par ville proposée.
+Notre site est basé sur un système de proposition et de vote de projets pour redonner vie à une friche. Le projet atteignant le plus de vote dans un temps imparti, sera selectionné et accompagné par l'équipe dans la réalisation de son projet.
+De plus, il est possible pour les utilisateurs de financer une campagne. Ainsi, le projet remportant le plus de vote bénéficie d'un dossier complet à présenter aux acteurs publics pour sa réalisation.
 
-* à continuer 
+* Afin de proposer un projet, il faut s'enregistrer ou se logger
+* Pour voter, il faut être loggé
+* Pour faire un don, il faut être loggé également
+
+
