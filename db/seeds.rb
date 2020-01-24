@@ -21,7 +21,7 @@ Place.create!(name: "Parc d'attraction", address: "2 Rue Friche", image_url: "pl
 Place.create!(name: "Route", address: "3 Rue Friche", image_url: "place/3.png", city_id: 3, latitude: 43.300000, longitude: 5.400000)
 Place.create!(name: "Piscine", address: "4 Rue Frich", image_url: "place/4.jpg", city_id: 4, latitude: 43.700000, longitude: 7.250000)
 Place.create!(name: "Stade", address: "5 Rue Friche", image_url: "place/5.jpg", city_id: 5, latitude: 48.866667, longitude: 2.333333)
-Place.create!(name: "Bâtiment", address: "6 Rue Friche", image_url: "place/6.jpg", city_id: 6, latitude: 43.600000, longitude: 1.433333)
+Place.create!(name: "Ancienne poudrerie nationale", address: "Ile du Ramier", image_url: "place/6.jpg", city_id: 6, latitude: 43.600000, longitude: 1.433333)
 
 
 20.times do |index|
