@@ -3,7 +3,7 @@
 
 <% if current_user.vote?(@event) %>
 <div class="btn" style="width: 100%; display: inline-block;">
-  <%= button_to "ANNULER", unvote_path(event_id: @event.id), remote: true, method: :delete, class:"btn btn-black"%>
+  <%= button_to "ANNULER MON VOTE", unvote_path(event_id: @event.id), remote: true, method: :delete, class:"btn btn-black"%>
 </div>
 <% else %>
 <div class="btn" style="width: 100%; display: inline-block;">
@@ -15,7 +15,7 @@
 
 <% else %> 
 
-Vous devez vous connecter pour voter pour ce projet.
+Vous devez vous connecter pour voter.
 
 
 <% end %>

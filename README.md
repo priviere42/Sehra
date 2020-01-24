@@ -1,24 +1,29 @@
-# README
+# SEHRA. WITH ♥️ FROM TOULOUSE 🏜
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## COMPOSITION DE NOTRE GANG 🏴‍☠️
 
-Things you may want to cover:
+♾ Paul Trin-Dinh @askprod (Back-end & Front-end) <br>
+♾ Paul Rivière @blud7 (Back-end & Front-end) <br>
+♾ Patrick Razafindrakoto @patpasha (Back-end & Front-end) <br>
+♾ Evan Bourguoin @Cyran0 (Front-end) <br>
+♾ Sophie Chateau @XxKevinou (Front-end)
 
-* Ruby version
+## PRODUCTION LINK 💻
 
-* System dependencies
+🔆 Venez vivre l'expérience Sehra en visitant notre application ➡️ http://sehra.herokuapp.com/ 🔥
 
-* Configuration
+## LE PITCH DE NOTRE PROJET
 
-* Database creation
+Sehra est la première plateforme d'espaces communautaires éphémères. 
 
-* Database initialization
+## COMMENT FONCTIONNE L'APPLICATION ?
 
-* How to run the test suite
+Notre équipe s'occupe de recenser une friche industrielle par ville proposée.
+Notre site est basé sur un système de proposition et de vote de projets pour redonner vie à une friche. Le projet atteignant le plus de vote dans un temps imparti, sera selectionné et accompagné par l'équipe dans la réalisation de son projet.
+De plus, il est possible pour les utilisateurs de financer une campagne. Ainsi, le projet remportant le plus de vote bénéficie d'un dossier complet à présenter aux acteurs publics pour sa réalisation.
 
-* Services (job queues, cache servers, search engines, etc.)
+* Afin de proposer un projet, il faut s'enregistrer ou se logger
+* Pour voter, il faut être loggé
+* Pour faire un don, il faut être loggé également
 
-* Deployment instructions
 
-* ...
