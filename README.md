@@ -1,6 +1,6 @@
-# SEHRA. WITH ♥️ FROM TOULOUSE 🏜
+# SEHRA, PLATEFORME DE CONSULTATION CITOYENNE
 
-## COMPOSITION DE NOTRE GANG 🏴‍☠️
+## EQUIPE
 
 ♾ Paul Trin-Dinh @askprod (Back-end & Front-end) <br>
 ♾ Paul Rivière @blud7 (Back-end & Front-end) <br>
@@ -8,13 +8,14 @@
 ♾ Evan Bourguoin @Cyran0 (Front-end) <br>
 ♾ Sophie Chateau @XxKevinou (Front-end)
 
-## PRODUCTION LINK 💻
+## PRODUCTION LINK
 
-🔆 Venez vivre l'expérience Sehra en visitant notre application ➡️ http://sehra.herokuapp.com/ 🔥
+Venez vivre l'expérience Sehra en visitant notre application ➡️ http://sehra.herokuapp.com/
 
-## LE PITCH DE NOTRE PROJET
+## RESUME
 
-Sehra est la première plateforme d'espaces communautaires éphémères. 
+Sehra est la première plateforme de consultation citoyenne visant à créer des espaces éphémères dans des lieux abandonnés.
+En montant un dossier pour un lieu abandonné identifié par l'équipe en amont, chaque utilisateur peut porter sa vision de la façon dont le lieu pourrait être re-dynamisé. Des votes et un système de don assurent que le projet soit mis en lumière, pour pouvoir le porter auprès des collectivités en charge du lieu.
 
 ## COMMENT FONCTIONNE L'APPLICATION ?
 
